@@ -1,0 +1,6 @@
+---
+path: "/"
+title: "Wave"
+---
+
+# Application

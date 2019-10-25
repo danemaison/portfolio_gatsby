@@ -11,36 +11,60 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import styled from 'styled-components';
+
+const Main = styled.main`
+  color:#575757;
+  margin-top: 50px;
+  font-family: 'Montserrat', sans-serif;
+`
+
+const Footer = styled.footer`
+  width:100%;
+  height:150px;
+  background-color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family: 'Montserrat', sans-serif;
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+    query {
+     allFile(
+        filter: {
+          sourceInstanceName: { eq: "content" }
+          extension: { eq: "md" }
+          relativeDirectory: { regex: "/portfolio/" }
+        }
+        sort: { fields: [dir], order: DESC }
+      ) {
+        edges {
+          node {
+            id
+            childMarkdownRemark {
+              frontmatter {
+                title
+              }
+              html
+            }
+          }
         }
       }
     }
   `)
 
+
+  console.log(data);
+
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <Header />
+      <Main>{children}</Main>
+      <Footer>
+        <div>Dane Maison</div>
+      </Footer>
     </>
   )
 }
