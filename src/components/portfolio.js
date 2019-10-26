@@ -1,5 +1,11 @@
-import React from 'react';
+import React, {useState, setState} from 'react';
 import styled from 'styled-components';
+import PortfolioItem from '../templates/portfolio-project';
+import { useStaticQuery, graphql } from "gatsby";
+import {PrimaryButton, SecondaryButton} from '../components/ui/buttons';
+import {SectionTitle} from '../components/ui/elements';
+import { animated, useTransition, config } from 'react-spring';
+import { filter } from 'minimatch';
 
 
 const Container = styled.div`
@@ -10,55 +16,26 @@ const Container = styled.div`
 `
 const Header = styled.div`
   width:100%;
-  margin-bottom:15px;
+  margin-bottom:20px;
   text-align: center;
-`
-
-const Title = styled.div`
-  display:flex;
-  justify-content: center;
-  position: relative;
-  color:white;
-  margin-bottom:5px;
-  font-size:23px;
-  font-weight:700;
-  text-transform: uppercase;
-  &::after{
-    content: "";
-    z-index: -1;
-    position: absolute;
-    width:180px;
-    left:50%;
-    transform: translate(-50%) rotateZ(-2deg);
-    background-color:#127EB1;
-    height:100%;
-
-  }
 `
 
 const Buttons = styled.div`
   display: flex;
   justify-content: space-between;
-  width:75%;
+  width:50%;
   margin:auto;
-  margin-bottom:15px;
-`
-
-const Button = styled.button`
-  font-size:.6rem;
-  width:100px;
-  border-radius: 50px;
-  background-color:white;
-  border:1px solid #575757;
-  color:#575757;
-  font-weight:700;
-  text-transform:uppercase;
+  margin-bottom:20px;
 `
 
 const Projects = styled.div`
   display:flex;
   flex-wrap:wrap;
   justify-content: space-around;
+  min-height:100vh;
+  >div {
+    width:50%;
+  }
 `
 
 const Project = styled.div`
@@ -66,31 +43,84 @@ const Project = styled.div`
   width:250px;
   margin:15px;
   border:1px solid black;
-
 `
 
 const Portfolio = () =>{
+  const data = useStaticQuery(graphql`
+    query {
+     allFile(
+        filter: {
+          sourceInstanceName: { eq: "content" }
+          extension: { eq: "md" }
+          relativeDirectory: { regex: "/portfolio/" }
+        }
+        sort: { fields: [dir], order: DESC }
+      ) {
+        edges {
+          node {
+            id
+            childMarkdownRemark {
+              frontmatter {
+                title
+                stack
+                description
+                type
+                image {
+                  childImageSharp{
+                    fluid(maxWidth:800, quality:80){
+                      ...GatsbyImageSharpFluid_tracedSVG
+                    }
+                  }
+                }
+              }
+              html
+            }
+          }
+        }
+      }
+    }
+  `)
+  const {edges} = data.allFile;
+  const [projects, setProjects] = useState(edges)
+  const transition = useTransition(projects, projects => projects.node.id, {
+    from: { transform: 'translateY(40px)', opacity:0 },
+    enter: { transform: 'translateY(0)', opacity:1 },
+    leave: { transform: 'translateY(40px)', opacity:0 },
+});
+
+  const filterProjects = (value) => {
+    setProjects([]);
+    setTimeout(()=>{
+      setProjects(edges.filter(project => {
+        return project.node.childMarkdownRemark.frontmatter.type.includes(value)
+      })
+      )
+    }, 750);
+  }
+
   return(
     <Container>
       <Header>
-        <Title>
+        <SectionTitle>
           Projects
-        </Title>
-        Check out what I've been working on.
+        </SectionTitle>
+        Check out what I've been working on
       </Header>
       <Buttons>
-        <Button>All</Button>
-        <Button>Frontend</Button>
-        <Button>Full-Stack</Button>
-        <Button>Other</Button>
+        <PrimaryButton onClick={()=>filterProjects('all')}>All</PrimaryButton>
+        <SecondaryButton onClick={() => filterProjects('frontend')}>Frontend</SecondaryButton>
+        <SecondaryButton onClick={() => filterProjects('fullstack')}>Full-Stack</SecondaryButton>
+        <SecondaryButton>Other</SecondaryButton>
       </Buttons>
       <Projects>
-        <Project></Project>
-        <Project></Project>
-        <Project></Project>
-        <Project></Project>
-        <Project></Project>
-        <Project></Project>
+        {transition.map(({item, props, key})=>{
+          const {node} = item;
+          return(
+            <animated.div key={key} style={props}>
+              <PortfolioItem data={node}/>
+            </animated.div>
+          );
+        })}
       </Projects>
     </Container>
   )

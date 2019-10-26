@@ -11,6 +11,7 @@ const Nav = styled.nav`
   position: fixed;
   top:0;
   left:0;
+  z-index: 9;
   background-color:white;
   color:black;
   height:50px;
@@ -19,6 +20,10 @@ const Nav = styled.nav`
 `;
 
 const Brand = styled.div`
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
   margin-left:50px;
 `
 
@@ -29,23 +34,36 @@ const Button = styled.a`
   margin-right:35px;
   border:none;
   background-color:transparent;
-  transition:.5s;
+  transition:.3s;
 
   &:hover {
     cursor:pointer;
-    color:blue;
+    color:#127EB1;
   }
+`
+const SubBrand = styled.div`
+  letter-spacing: 3px;
+  font-size:.5rem;
+  font-weight:700;
+  text-transform:uppercase;
+  margin-left:3px;
+  color:#127EB1;
+`
+const Name = styled.div`
+  margin-top:3px;
+  margin-bottom:-10px;
+  /* font-weight: 700; */
 `
 
 const Header = ({ siteTitle }) => (
   <Nav>
     <Brand>
-      Dane Maison
+      <Name>Dane Maison</Name>
+      <SubBrand>Web Developer</SubBrand>
     </Brand>
     <div>
-      <Button>Skills</Button>
-      <Button>Portfolio</Button>
       <Button>About Me</Button>
+      <Button>Projects</Button>
       <Button>Contact</Button>
     </div>
   </Nav>

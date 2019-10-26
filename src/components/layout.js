@@ -14,7 +14,8 @@ import "./layout.css"
 import styled from 'styled-components';
 
 const Main = styled.main`
-  color:#575757;
+  /* color:#575757; */
+  color:black;
   margin-top: 50px;
   font-family: 'Montserrat', sans-serif;
 `
@@ -30,34 +31,6 @@ const Footer = styled.footer`
 `
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query {
-     allFile(
-        filter: {
-          sourceInstanceName: { eq: "content" }
-          extension: { eq: "md" }
-          relativeDirectory: { regex: "/portfolio/" }
-        }
-        sort: { fields: [dir], order: DESC }
-      ) {
-        edges {
-          node {
-            id
-            childMarkdownRemark {
-              frontmatter {
-                title
-              }
-              html
-            }
-          }
-        }
-      }
-    }
-  `)
-
-
-  console.log(data);
-
   return (
     <>
       <Header />
