@@ -11,15 +11,24 @@ const PrimaryButton = styled.button`
   color: white;
   font-weight: 700;
   text-transform: uppercase;
+  transition:.2s;
+  box-shadow:none;
+  outline:none;
 
   &:hover{
+    box-shadow:2px 7.5px 8px rgba(0, 0, 0, .5);
+    transform: translateY(-3px);
     cursor: pointer;
+  }
+  &:active{
+    box-shadow:0px 3px 5px rgba(0, 0, 0, .5);
+    transform: translateY(-1px);
   }
 `
 const SecondaryButton = styled(PrimaryButton)`
-  color:black;
+  color:#6e6e6e;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid #999;
 `
 
 
