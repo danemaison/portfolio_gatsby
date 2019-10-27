@@ -1,5 +1,5 @@
 ---
-stack: 'HTML5 - CSS3 - JavaScript - React JS - Python - PHP - Flask  - Webpack - Styled Components - Bootstrap - Gatsby - Git - Heroku - WordPress - Adobe Suite'
+stack: 'HTML5 - CSS3 - JavaScript - React JS - Python - PHP - SQL - Flask  - Webpack - Styled Components - Bootstrap - Gatsby - Git - Heroku - WordPress - Adobe Suite'
 ---
 
 I'm a full-stack web developer who loves building things, learning new technologies, and pushing my creative limits.

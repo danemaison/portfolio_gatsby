@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import {animated} from 'react-spring';
 
 
-const PrimaryButton = styled.button`
+const PrimaryButton = styled(animated.button)`
   font-size: .6rem;
   width: 100px;
   border-radius: 50px;
@@ -16,12 +17,12 @@ const PrimaryButton = styled.button`
   outline:none;
 
   &:hover{
-    box-shadow:2px 7.5px 8px rgba(0, 0, 0, .5);
+    box-shadow:2px 7.5px 8px rgba(0, 0, 0, .15);
     transform: translateY(-3px);
     cursor: pointer;
   }
   &:active{
-    box-shadow:0px 3px 5px rgba(0, 0, 0, .5);
+    box-shadow:0px 3px 5px rgba(0, 0, 0, .15);
     transform: translateY(-1px);
   }
 `

@@ -9,6 +9,7 @@ const Container = styled.div`
   display:flex;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 15px;
 `
 const SubHeader = styled.div`
   width:100%;

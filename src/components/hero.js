@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {useStaticQuery, graphql} from 'gatsby';
+import { useSpring, animated, config } from 'react-spring';
 import {PrimaryButton} from '../components/ui/buttons';
 import TextRotator from '../components/ui/selfdescription';
 
@@ -25,16 +26,14 @@ position:relative;
   border-radius:100%;
   background-color:#089ECA;
 `
-const Header = styled.div`
-
-margin: 35px 0;
+const Header = styled(animated.div)`
+  margin: 35px 0;
   display:flex;
   align-items: center;
   justify-content: center;
   font-size:3rem;
   width:100%;
   line-height:55px;
-  /* border:1px solid black; */
 `
 
 const Name = styled.span`
@@ -42,7 +41,7 @@ const Name = styled.span`
   color: #127EB1;
 `
 
-const SubHeader = styled.div`
+const SubHeader = styled(animated.div)`
   font-size: 2rem;
   margin-bottom: 35px;
 `
@@ -55,26 +54,37 @@ const Button = styled(PrimaryButton)`
 `
 
 const Hero = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "dm.png" }) {
-        childImageSharp {
-          fluid(quality: 80, maxHeight: 1080) {
-            ...GatsbyImageSharpFluid_tracedSVG
-          }
-        }
-      }
-    }
-  `);
+  const HeaderSpring = useSpring({
+    config: config.wobbly,
+    delay: 200,
+    opacity: 1,
+    transform: 'translateX(0px)',
+    from: { opacity: 0, transform: 'translateX(40px)' },
+  });
+
+  const SubHeaderSpring = useSpring({
+    config: config.wobbly,
+    delay: 500,
+    opacity: 1,
+    transform: 'translateY(0px)',
+    from: { opacity:0, transform: 'translateY(40px)'},
+  })
+
+  const ButtonSpring = useSpring({
+    opacity: 1,
+    delay: 700,
+    from: {opacity: 0}
+  })
+
   return(
     <Container>
-      <Header>
+      <Header style={HeaderSpring}>
         Hey, I'm&nbsp;<Name>Dane Maison</Name>! 👋🏻
       </Header>
-      <SubHeader>
+      <SubHeader style={SubHeaderSpring}>
         I'm a <TextRotator/>
       </SubHeader>
-      <Button>Learn More</Button>
+      <Button style={ButtonSpring}>Learn More</Button>
     </Container>
   );
 }

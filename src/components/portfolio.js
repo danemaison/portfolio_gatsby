@@ -110,14 +110,13 @@ const Portfolio = () =>{
         <PrimaryButton onClick={()=>filterProjects('all')}>All</PrimaryButton>
         <SecondaryButton onClick={() => filterProjects('frontend')}>Frontend</SecondaryButton>
         <SecondaryButton onClick={() => filterProjects('fullstack')}>Full-Stack</SecondaryButton>
-        <SecondaryButton>Other</SecondaryButton>
+        <SecondaryButton onClick={()=> filterProjects('other')}>Other</SecondaryButton>
       </Buttons>
       <Projects>
         {transition.map(({item, props, key})=>{
-          const {node} = item;
           return(
             <animated.div key={key} style={props}>
-              <PortfolioItem data={node}/>
+              <PortfolioItem data={item.node}/>
             </animated.div>
           );
         })}

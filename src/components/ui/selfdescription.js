@@ -7,7 +7,7 @@ import { animated, useTransition, config } from 'react-spring';
 const descriptions = [
   {id: 0, text: 'full-stack developer'},
   { id: 1, text: 'JavaScript enthusiast' },
-  { id: 2, text: '' },
+  { id: 2, text: 'creative problem solver'},
 ]
 
 const TextWrapper = styled.div`
@@ -58,7 +58,7 @@ const TextRotator = () =>{
   );
   return(
     <TextWrapper>
-      <Hidden>JavaScript enthusiast</Hidden>
+      <Hidden>creative problem solver</Hidden>
       {transition.map(({ item, props, key }) => {
         return(
         <animated.span key={key} style={props}>
