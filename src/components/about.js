@@ -16,6 +16,10 @@ const Container = styled.div`
 const Body = styled.div`
   text-align: center;
 `
+const Title = styled(SectionTitle)`
+  position:relative;
+  z-index: 3;
+`
 const StackHeader = styled.div`
   width:30%;
   text-align:center;
@@ -52,9 +56,9 @@ const About = ()=>{
 
   return(
     <Container>
-      <SectionTitle>
+      <Title>
         About Me
-      </SectionTitle>
+      </Title>
       <Body>
         {renderCustom(htmlAst)}
       </Body>

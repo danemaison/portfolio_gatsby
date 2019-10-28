@@ -54,7 +54,7 @@ const Portfolio = () =>{
           extension: { eq: "md" }
           relativeDirectory: { regex: "/portfolio/" }
         }
-        sort: { fields: [dir], order: DESC }
+       sort: { fields: [dir], order: DESC }
       ) {
         edges {
           node {

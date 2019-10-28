@@ -10,7 +10,6 @@ const Container = styled.div`
   display:flex;
   text-align:center;
   flex-direction:column;
-  width:75%;
   margin:auto;
   justify-content:center;
   align-items:center;
@@ -18,21 +17,14 @@ const Container = styled.div`
   margin-bottom:15vh;
 `
 
-const Logo = styled.div`
-position:relative;
-  width:400px;
-  height:400px;
-  border:1px solid transparent;
-  border-radius:100%;
-  background-color:#089ECA;
-`
 const Header = styled(animated.div)`
-  margin: 35px 0;
+  position: relative;
+  z-index: 3;
+  margin: 35px auto;
   display:flex;
   align-items: center;
   justify-content: center;
   font-size:3rem;
-  width:100%;
   line-height:55px;
 `
 
@@ -42,11 +34,15 @@ const Name = styled.span`
 `
 
 const SubHeader = styled(animated.div)`
+  position: relative;
+  z-index: 3;
   font-size: 2rem;
   margin-bottom: 35px;
 `
 
 const Button = styled(PrimaryButton)`
+  position: relative;
+  z-index: 3;
   font-size:.8rem;
   width:200px;
   padding:5px;

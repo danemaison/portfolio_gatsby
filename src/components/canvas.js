@@ -10,7 +10,7 @@ const Shadow = styled.div`
   position: absolute;
   bottom:-50px;
   left:0;
-  z-index: -1;
+  z-index: 2;
 `
 class Canvas extends React.Component{
   constructor(props){
@@ -19,36 +19,48 @@ class Canvas extends React.Component{
     this.state = {
       particles: [{x: 5, y: 150, alpha: .5, speed: Math.random() * 3 + 1}]
     }
+    this.mouseX = null;
     this.count = 0;
     this.tick = this.tick.bind(this);
+    this.getMouseCoords = this.getMouseCoords.bind(this);
+  }
+  getMouseCoords(e){
+    this.mouseX = e.clientX;
   }
   moveParticles(){
+    let { particles } = this.state;
     const canvas = this.ref.current;
     const context = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const direction = this.mouseX / window.innerWidth * 2 - 1;
+
+    canvas.width = window.innerWidth * 2;
+    canvas.height = window.innerHeight * 2;
+    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
+
     canvas.style.position = 'absolute';
-    canvas.style.zIndex = '-2';
+    canvas.style.zIndex = '1';
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    let { particles } = this.state;
     this.count++;
-    if(this.count % 10 === 0){
+    if(this.count % 7 === 0){
       this.count = 0;
       particles.push({
-        x: Math.random() * window.innerWidth,
-        y: -15,
-        alpha: Math.random(),
-        speed: Math.random() * 1.5 + .5,
+        x: Math.random() * window.innerWidth * 2,
+        y: canvas.height,
+        alpha: Math.random() * .75 + .25,
+        speed: Math.random() * 3 + 1,
       })
     }
 
     particles = particles.filter(particle=>{
-      if(particle.y > canvas.height) return false;
-      particle.y += particle.speed;
+      if(particle.y < 0) return false;
+      particle.y -= particle.speed;
+      particle.x += direction * 2;
       context.beginPath();
       context.fillStyle = '#127EB1';
-      context.arc(particle.x, particle.y, 1.5, 0, 2 * Math.PI);
+      // context.arc(particle.x, particle.y, 4, 0, 2 * Math.PI);
+      context.rect(particle.x, particle.y, 10, 10);
       context.globalAlpha = particle.alpha;
       context.fill();
       context.closePath();
@@ -64,11 +76,10 @@ class Canvas extends React.Component{
   componentDidMount(){
     this.tick();
   }
-
   render(){
     return (
       <>
-        <canvas ref={this.ref} />
+        <canvas onMouseMove={this.getMouseCoords } ref={this.ref} />
         <Shadow/>
       </>
     )

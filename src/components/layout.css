@@ -26,6 +26,7 @@ audio,
 canvas,
 progress,
 video {
+  image-rendering: pixelated;
   display: inline-block;
 }
 audio:not([controls]) {

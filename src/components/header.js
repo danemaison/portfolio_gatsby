@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components";
+import {animated, useSpring, config } from 'react-spring';
 
 const Nav = styled.nav`
   font-family: 'Montserrat', sans-serif;
@@ -27,7 +28,7 @@ const Brand = styled.div`
   margin-left:50px;
 `
 
-const Button = styled.a`
+const Button = styled(animated.a)`
   font-size:.6rem;
   font-weight:700;
   text-transform:uppercase;
@@ -55,19 +56,24 @@ const Name = styled.div`
   /* font-weight: 700; */
 `
 
-const Header = ({ siteTitle }) => (
-  <Nav>
-    <Brand>
-      <Name>Dane Maison</Name>
-      <SubBrand>Web Developer</SubBrand>
-    </Brand>
-    <div>
-      <Button>About Me</Button>
-      <Button>Projects</Button>
-      <Button>Contact</Button>
-    </div>
-  </Nav>
-)
+const Header = ({ siteTitle }) => {
+  // const ButtonSpring = useSpring({
+
+  // })
+  return (
+    <Nav>
+      <Brand>
+        <Name>Dane Maison</Name>
+        <SubBrand>Web Developer</SubBrand>
+      </Brand>
+      <div>
+        <Button>About Me</Button>
+        <Button>Projects</Button>
+        <Button>Contact</Button>
+      </div>
+    </Nav>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
