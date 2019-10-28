@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {animated} from 'react-spring';
 
 
-const PrimaryButton = styled(animated.button)`
+const ButtonPrimary = styled(animated.button)`
   font-size: .6rem;
   width: 100px;
   border-radius: 50px;
@@ -26,7 +26,7 @@ const PrimaryButton = styled(animated.button)`
     transform: translateY(-1px);
   }
 `
-const SecondaryButton = styled(PrimaryButton)`
+const ButtonSecondary = styled(ButtonPrimary)`
   color:#6e6e6e;
   background-color: white;
   border: 1px solid #999;
@@ -34,6 +34,6 @@ const SecondaryButton = styled(PrimaryButton)`
 
 
 export {
-  PrimaryButton,
-  SecondaryButton,
+  ButtonPrimary,
+  ButtonSecondary,
 }

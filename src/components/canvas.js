@@ -8,7 +8,7 @@ const Shadow = styled.div`
   background-color:transparent;
   box-shadow: inset  0 -50px 50px -10px white;
   position: absolute;
-  bottom:-50px;
+  bottom:-80px;
   left:0;
   z-index: 2;
 `

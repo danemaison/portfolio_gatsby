@@ -2,7 +2,7 @@ import React, {useState, setState} from 'react';
 import styled from 'styled-components';
 import PortfolioItem from '../templates/portfolio-project';
 import { useStaticQuery, graphql } from "gatsby";
-import {PrimaryButton, SecondaryButton} from '../components/ui/buttons';
+import {ButtonPrimary, ButtonSecondary} from '../components/ui/buttons';
 import {SectionTitle} from '../components/ui/elements';
 import { animated, useTransition, config } from 'react-spring';
 import { filter } from 'minimatch';
@@ -107,10 +107,10 @@ const Portfolio = () =>{
         Check out what I've been working on
       </Header>
       <Buttons>
-        <PrimaryButton onClick={()=>filterProjects('all')}>All</PrimaryButton>
-        <SecondaryButton onClick={() => filterProjects('frontend')}>Frontend</SecondaryButton>
-        <SecondaryButton onClick={() => filterProjects('fullstack')}>Full-Stack</SecondaryButton>
-        <SecondaryButton onClick={()=> filterProjects('other')}>Other</SecondaryButton>
+        <ButtonPrimary onClick={()=>filterProjects('all')}>All</ButtonPrimary>
+        <ButtonSecondary onClick={() => filterProjects('frontend')}>Frontend</ButtonSecondary>
+        <ButtonSecondary onClick={() => filterProjects('fullstack')}>Full-Stack</ButtonSecondary>
+        <ButtonSecondary onClick={()=> filterProjects('other')}>Other</ButtonSecondary>
       </Buttons>
       <Projects>
         {transition.map(({item, props, key})=>{

@@ -1,6 +1,6 @@
 import React, { Children } from 'react';
 import styled from 'styled-components';
-import {PrimaryButton, SecondaryButton} from '../components/ui/buttons';
+import {ButtonPrimary, ButtonSecondary} from '../components/ui/buttons';
 import Img from 'gatsby-image';
 
 const Container = styled.div`
@@ -34,7 +34,7 @@ const Image = styled(Img)`
   box-shadow: 0 0px 5px rgba(0,0,0,.5);
 `
 
-const SiteButton = styled(PrimaryButton)`
+const SiteButton = styled(ButtonPrimary)`
   margin-right:5px;
   width:60px;
   height:25px;
@@ -44,7 +44,7 @@ const SiteButton = styled(PrimaryButton)`
   align-items:center;
   font-size:.5rem;
 `
-const SourceButton = styled(SecondaryButton)`
+const SourceButton = styled(ButtonSecondary)`
   width:60px;
   height:25px;
   line-height:0;
