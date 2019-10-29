@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import {animated} from 'react-spring';
 
 
-const ButtonPrimary = styled(animated.button)`
+const Button = styled(animated.button)`
   font-size: .6rem;
   width: 100px;
   border-radius: 50px;
-  background-color: #127EB1;
-  border: 1px solid #127EB1;
-  color: white;
+  background-color: ${props => props.primary ? "#127EB1" : "white"};
+  border: 1px solid ${props => props.primary ? "#127EB1" : "#999"};
+  color: ${props => props.primary ? "white" : "#6e6e6e"};
   font-weight: 700;
   text-transform: uppercase;
   transition:.2s;
@@ -17,23 +17,16 @@ const ButtonPrimary = styled(animated.button)`
   outline:none;
 
   &:hover{
-    box-shadow:2px 7.5px 8px rgba(0, 0, 0, .15);
+    box-shadow:2px 7.5px 8px rgba(0, 0, 0, .05);
     transform: translateY(-3px);
     cursor: pointer;
   }
   &:active{
-    box-shadow:0px 3px 5px rgba(0, 0, 0, .15);
+    box-shadow:0px 3px 5px rgba(0, 0, 0, .05);
     transform: translateY(-1px);
   }
 `
-const ButtonSecondary = styled(ButtonPrimary)`
-  color:#6e6e6e;
-  background-color: white;
-  border: 1px solid #999;
-`
-
 
 export {
-  ButtonPrimary,
-  ButtonSecondary,
+  Button
 }

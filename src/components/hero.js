@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import {useStaticQuery, graphql} from 'gatsby';
 import { useSpring, animated, config } from 'react-spring';
-import {ButtonPrimary} from '../components/ui/buttons';
+import {Button} from '../components/ui/buttons';
 import TextRotator from '../components/ui/selfdescription';
 
 const Container = styled.div`
@@ -40,7 +39,7 @@ const SubHeader = styled(animated.div)`
   margin-bottom: 35px;
 `
 
-const Button = styled(ButtonPrimary)`
+const HeroButton = styled(Button)`
   position: relative;
   z-index: 3;
   font-size:.8rem;
@@ -80,7 +79,7 @@ const Hero = () => {
       <SubHeader style={SubHeaderSpring}>
         I'm a <TextRotator/>
       </SubHeader>
-      <Button style={ButtonSpring}>Learn More</Button>
+      <HeroButton primary style={ButtonSpring}>Learn More</HeroButton>
     </Container>
   );
 }

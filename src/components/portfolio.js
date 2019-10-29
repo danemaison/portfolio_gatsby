@@ -1,8 +1,8 @@
-import React, {useState, setState} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import PortfolioItem from '../templates/portfolio-project';
 import { useStaticQuery, graphql } from "gatsby";
-import {ButtonPrimary, ButtonSecondary} from '../components/ui/buttons';
+import {Button} from '../components/ui/buttons';
 import {SectionTitle} from '../components/ui/elements';
 import { animated, useTransition, config } from 'react-spring';
 import { filter } from 'minimatch';
@@ -79,20 +79,27 @@ const Portfolio = () =>{
         }
       }
     }
-  `)
+  `);
+
   const {edges} = data.allFile;
+
   const [projects, setProjects] = useState(edges)
+  const filterButtons = ['all', 'frontend', 'full-stack', 'other'];
+  const [activeButton, setActiveButton] = useState(0);
   const transition = useTransition(projects, projects => projects.node.id, {
     from: { transform: 'translateY(40px)', opacity:0 },
     enter: { transform: 'translateY(0)', opacity:1 },
     leave: { transform: 'translateY(40px)', opacity:0 },
-});
+  });
 
-  const filterProjects = (value) => {
+  const filterProjects = e => {
+    const index = parseInt(e.target.getAttribute('data-index'));
+    const {id} = e.currentTarget;
+    setActiveButton(index);
     setProjects([]);
     setTimeout(()=>{
       setProjects(edges.filter(project => {
-        return project.node.childMarkdownRemark.frontmatter.type.includes(value)
+        return project.node.childMarkdownRemark.frontmatter.type.includes(id)
       })
       )
     }, 750);
@@ -107,10 +114,18 @@ const Portfolio = () =>{
         Check out what I've been working on
       </Header>
       <Buttons>
-        <ButtonPrimary onClick={()=>filterProjects('all')}>All</ButtonPrimary>
-        <ButtonSecondary onClick={() => filterProjects('frontend')}>Frontend</ButtonSecondary>
-        <ButtonSecondary onClick={() => filterProjects('fullstack')}>Full-Stack</ButtonSecondary>
-        <ButtonSecondary onClick={()=> filterProjects('other')}>Other</ButtonSecondary>
+        {filterButtons.map((item, index)=>{
+          return (
+            <Button
+              primary={activeButton === index}
+              id={item}
+              data-index={index}
+              key={item}
+              onClick={filterProjects}>
+              {item}
+              </Button>
+            )
+          })}
       </Buttons>
       <Projects>
         {transition.map(({item, props, key})=>{

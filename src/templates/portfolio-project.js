@@ -1,6 +1,6 @@
-import React, { Children } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import {ButtonPrimary, ButtonSecondary} from '../components/ui/buttons';
+import {Button} from '../components/ui/buttons';
 import Img from 'gatsby-image';
 
 const Container = styled.div`
@@ -34,8 +34,7 @@ const Image = styled(Img)`
   box-shadow: 0 0px 5px rgba(0,0,0,.5);
 `
 
-const SiteButton = styled(ButtonPrimary)`
-  margin-right:5px;
+const PortfolioButton = styled(Button)`
   width:60px;
   height:25px;
   line-height:0;
@@ -43,15 +42,10 @@ const SiteButton = styled(ButtonPrimary)`
   justify-content:center;
   align-items:center;
   font-size:.5rem;
-`
-const SourceButton = styled(ButtonSecondary)`
-  width:60px;
-  height:25px;
-  line-height:0;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:.5rem;
+
+  &:first-child{
+    margin-right:5px;
+  }
 `
 const Stack = styled.div`
   color:black;
@@ -64,7 +58,7 @@ const HeaderRow = styled(Row)`
 `
 export default function PortfolioItem({data}){
   const {childMarkdownRemark} = data;
-  const {frontmatter, html} = childMarkdownRemark;
+  const {frontmatter} = childMarkdownRemark;
   const {image, title, stack, description} = frontmatter;
 
   return(
@@ -73,8 +67,8 @@ export default function PortfolioItem({data}){
       <HeaderRow>
         <Header>{title}</Header>
         <Row>
-          <SiteButton>Live</SiteButton>
-          <SourceButton>Source</SourceButton>
+          <PortfolioButton primary>Live</PortfolioButton>
+          <PortfolioButton>Source</PortfolioButton>
         </Row>
       </HeaderRow>
       <SubHeader>
@@ -83,7 +77,6 @@ export default function PortfolioItem({data}){
           {stack}
         </Stack>
       </SubHeader>
-
     </Container>
   )
 }

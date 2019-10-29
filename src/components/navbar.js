@@ -56,7 +56,6 @@ const Name = styled.div`
 `
 
 const NavBar = props => {
-  console.log(props);
   return (
     <Nav>
       <Brand>

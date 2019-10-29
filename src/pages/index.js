@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React from "react";
 import Layout from "../components/layout";
 import Portfolio from '../components/portfolio';
 import Hero from '../components/hero';
