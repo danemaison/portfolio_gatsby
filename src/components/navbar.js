@@ -25,6 +25,9 @@ const Brand = styled.div`
   align-items:center;
   text-align:center;
   margin-left:50px;
+  @media(max-width: 700px){
+    margin-left:10px;
+  }
 `
 
 const Button = styled(animated.a)`
@@ -39,6 +42,12 @@ const Button = styled(animated.a)`
   &:hover {
     cursor:pointer;
     color:#127EB1;
+  }
+`
+
+const ButtonContainer = styled.div`
+  @media(max-width: 700px){
+    display:none;
   }
 `
 const SubBrand = styled.div`
@@ -62,11 +71,11 @@ const NavBar = props => {
         <Name>Dane Maison</Name>
         <SubBrand>Web Developer</SubBrand>
       </Brand>
-      <div>
+      <ButtonContainer>
         <Button>About Me</Button>
         <Button>Projects</Button>
         <Button>Contact</Button>
-      </div>
+      </ButtonContainer>
     </Nav>
   )
 }
