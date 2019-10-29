@@ -5,7 +5,6 @@ import { useStaticQuery, graphql } from "gatsby";
 import {Button} from '../components/ui/buttons';
 import {SectionTitle} from '../components/ui/elements';
 import { animated, useTransition, config } from 'react-spring';
-import { filter } from 'minimatch';
 
 
 const Container = styled.div`
@@ -20,7 +19,7 @@ const Header = styled.div`
   text-align: center;
 `
 
-const Buttons = styled.div`
+const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width:50%;
@@ -36,13 +35,6 @@ const Projects = styled.div`
   >div {
     width:50%;
   }
-`
-
-const Project = styled.div`
-  height:180px;
-  width:250px;
-  margin:15px;
-  border:1px solid black;
 `
 
 const Portfolio = () =>{
@@ -113,7 +105,7 @@ const Portfolio = () =>{
         </SectionTitle>
         Check out what I've been working on
       </Header>
-      <Buttons>
+      <ButtonContainer>
         {filterButtons.map((item, index)=>{
           return (
             <Button
@@ -126,7 +118,7 @@ const Portfolio = () =>{
               </Button>
             )
           })}
-      </Buttons>
+      </ButtonContainer>
       <Projects>
         {transition.map(({item, props, key})=>{
           return(
