@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components";
@@ -56,10 +55,8 @@ const Name = styled.div`
   /* font-weight: 700; */
 `
 
-const Header = ({ siteTitle }) => {
-  // const ButtonSpring = useSpring({
-
-  // })
+const NavBar = props => {
+  console.log(props);
   return (
     <Nav>
       <Brand>
@@ -75,12 +72,12 @@ const Header = ({ siteTitle }) => {
   )
 }
 
-Header.propTypes = {
+NavBar.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
+NavBar.defaultProps = {
   siteTitle: ``,
 }
 
-export default Header
+export default NavBar
