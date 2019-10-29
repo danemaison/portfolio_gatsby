@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import "./layout.css"
 import styled from 'styled-components';
+import NavBar from "../components/navbar";
 
 const Main = styled.main`
   /* color:#575757; */
@@ -23,6 +24,7 @@ const Footer = styled.footer`
 const Layout = ({ children }) => {
   return (
     <>
+      <NavBar/>
       <Main>{children}</Main>
       <Footer>
         <div>Dane Maison</div>
