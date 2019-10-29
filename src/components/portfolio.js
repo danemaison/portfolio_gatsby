@@ -25,6 +25,12 @@ const ButtonContainer = styled.div`
   width:50%;
   margin:auto;
   margin-bottom:20px;
+  >button{
+    margin-right:5px;
+  }
+  >button:last-child{
+    margin-right:0;
+  }
 `
 
 const Projects = styled.div`

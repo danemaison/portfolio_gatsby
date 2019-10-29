@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { useSpring, animated, config } from 'react-spring';
 import {Button} from '../components/ui/buttons';
 import TextRotator from '../components/ui/selfdescription';
@@ -25,6 +26,11 @@ const Header = styled(animated.div)`
   justify-content: center;
   font-size:3rem;
   line-height:55px;
+
+  @media (max-width: 700px){
+    font-size:140%;
+    margin:0;
+  }
 `
 
 const Name = styled.span`
@@ -37,6 +43,9 @@ const SubHeader = styled(animated.div)`
   z-index: 3;
   font-size: 2rem;
   margin-bottom: 35px;
+  @media (max-width: 700px){
+    font-size: 120%;
+  }
 `
 
 const HeroButton = styled(Button)`
@@ -46,6 +55,11 @@ const HeroButton = styled(Button)`
   width:200px;
   padding:5px;
   letter-spacing:2.5px;
+  @media (max-width: 700px){
+    width:120px;
+    padding:3px;
+    font-size:40%;
+  }
 `
 
 const Hero = () => {
