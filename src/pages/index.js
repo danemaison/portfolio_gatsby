@@ -9,7 +9,7 @@ import Contact from '../components/contact';
 export default function IndexPage({data}){
     return(
     <Layout>
-      <Canvas/>
+      {/* <Canvas/> */}
       <Hero/>
       <About/>
       <Portfolio />

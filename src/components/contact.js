@@ -12,7 +12,7 @@ const Container = styled.div`
 const Contact = () =>{
 
   return(
-    <Container>
+    <Container id="contact">
       <SectionTitle>Contact Me</SectionTitle>
     </Container>
   )

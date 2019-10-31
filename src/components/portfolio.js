@@ -41,6 +41,10 @@ const Projects = styled.div`
   >div {
     width:50%;
   }
+  @media(max-width:700px){
+    display:block;
+    overflow-x:scroll;
+  }
 `
 
 const Portfolio = () =>{
@@ -104,7 +108,7 @@ const Portfolio = () =>{
   }
 
   return(
-    <Container>
+    <Container id="projects" >
       <Header>
         <SectionTitle>
           Projects

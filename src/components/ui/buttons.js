@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {animated} from 'react-spring';
 
 
-const Button = styled(animated.button)`
+const Button = styled.button`
   font-size: .6rem;
   width: 100px;
   border-radius: 50px;

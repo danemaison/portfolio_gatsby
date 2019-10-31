@@ -2,6 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components";
 import {animated, useSpring, config } from 'react-spring';
+import NavItem from './navitem';
 
 const Nav = styled.nav`
   font-family: 'Montserrat', sans-serif;
@@ -24,25 +25,7 @@ const Brand = styled.div`
   flex-direction:column;
   align-items:center;
   text-align:center;
-  margin-left:50px;
-  @media(max-width: 700px){
-    margin-left:10px;
-  }
-`
-
-const Button = styled(animated.a)`
-  font-size:.6rem;
-  font-weight:700;
-  text-transform:uppercase;
-  margin-right:35px;
-  border:none;
-  background-color:transparent;
-  transition:.3s;
-
-  &:hover {
-    cursor:pointer;
-    color:#127EB1;
-  }
+  margin-left:20px;
 `
 
 const ButtonContainer = styled.div`
@@ -55,26 +38,37 @@ const SubBrand = styled.div`
   font-size:.5rem;
   font-weight:700;
   text-transform:uppercase;
-  margin-left:3px;
   color:#127EB1;
 `
-const Name = styled.div`
-  margin-top:3px;
-  margin-bottom:-10px;
-  /* font-weight: 700; */
-`
+
+const Name = styled.div``;
+
+const AnimatedName = animated(Name);
+const AnimatedSubBrand = animated(SubBrand);
+
+const sections = ['About Me', 'Projects', 'Contact'];
 
 const NavBar = props => {
+  const nameSpring = useSpring({
+      config: config.wobbly,
+      opacity: 1,
+      transform:'translateX(0px)',
+      from: {transform:'translateX(-10px)', opacity:0},
+  })
+  const subBrandSpring = useSpring({
+    config: config.wobbly,
+    opacity: 1,
+    transform: 'translateX(0px)',
+    from: { transform: 'translateX(10px)', opacity:0 },
+  })
   return (
     <Nav>
       <Brand>
-        <Name>Dane Maison</Name>
-        <SubBrand>Web Developer</SubBrand>
+        <AnimatedName style={nameSpring}>Dane Maison</AnimatedName>
+        <AnimatedSubBrand style={subBrandSpring}>Web Developer</AnimatedSubBrand>
       </Brand>
       <ButtonContainer>
-        <Button>About Me</Button>
-        <Button>Projects</Button>
-        <Button>Contact</Button>
+        {sections.map(section=> <NavItem key={section} section={section} />)}
       </ButtonContainer>
     </Nav>
   )

@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import {SectionTitle} from '../components/ui/elements';
 import { useStaticQuery, graphql } from 'gatsby';
 import rehypeReact from 'rehype-react';
+import { Element } from 'react-scroll';
 
 const Container = styled.div`
   display:flex;
   flex-direction: column;
-  width:75%;
-  margin:80px auto;
+  margin:10% 5%;
   justify-content: center;
   align-items: center;
 `
@@ -21,7 +21,6 @@ const Title = styled(SectionTitle)`
   z-index: 3;
 `
 const StackHeader = styled.div`
-  width:30%;
   text-align:center;
   font-size:1.2rem;
   margin:auto;
@@ -55,7 +54,7 @@ const About = ()=>{
   const { htmlAst } = about.childMarkdownRemark;
 
   return(
-    <Container>
+    <Container id="about-me">
       <Title>
         About Me
       </Title>

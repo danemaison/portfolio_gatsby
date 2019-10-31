@@ -46,17 +46,22 @@ class Canvas extends React.Component{
     if(this.count % 7 === 0){
       this.count = 0;
       particles.push({
-        x: Math.random() * window.innerWidth * 2,
-        y: canvas.height,
+        // x: Math.random() * window.innerWidth * 2,
+        // y: -5,
+        y: Math.random() * window.innerWidth * 2,
+        x: -5,
         alpha: Math.random() * .75 + .25,
         speed: Math.random() * 3 + 1,
       })
     }
 
     particles = particles.filter(particle=>{
-      if(particle.y < 0) return false;
-      particle.y -= particle.speed;
-      particle.x += direction * 2;
+      if(particle.y > canvas.height) return false;
+      if(particle.alpha <= 0) return false;
+      // particle.y += particle.speed;
+      // particle.x += direction * 2;
+      particle.y += direction * 2;
+      particle.x += particle.speed
       context.beginPath();
       context.fillStyle = '#127EB1';
       // context.arc(particle.x, particle.y, 4, 0, 2 * Math.PI);
