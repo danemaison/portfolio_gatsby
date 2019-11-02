@@ -16,8 +16,6 @@ const Container = styled.div`
 
 const Header = styled(animated.div)`
   margin-top:-90px;
-  margin-left:10%;
-  width:100%;
   position: relative;
   z-index: 3;
   font-size:2.3rem;
@@ -48,7 +46,6 @@ const HeroButton = styled(Link)`
   font-weight: 700;
   letter-spacing:2.5px;
   text-transform: uppercase;
-
   padding: 10px;
   width: 200px;
   border-radius: 50px;

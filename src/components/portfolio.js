@@ -16,7 +16,9 @@ const Header = styled.div`
   margin-bottom:20px;
   text-align: center;
 `
-
+const FilterButton = styled(Button)`
+  height:25px;
+`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -35,9 +37,21 @@ const Projects = styled.div`
   flex-wrap:wrap;
   justify-content: space-around; */
   /* width:200vw; */
+  min-height:40vh;
   white-space: nowrap;
   overflow-x:scroll;
   overflow-y:hidden;
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height:5px;
+
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius:50px;
+    background-color: #127EB1;
+  }
+
   >div {
     width:85vw;
     display:inline-block;
@@ -86,6 +100,7 @@ const Portfolio = () =>{
   const filterButtons = ['all', 'frontend', 'full-stack', 'other'];
   const [activeButton, setActiveButton] = useState(0);
   const transition = useTransition(projects, projects => projects.node.id, {
+    config: config.gentle,
     from: { transform: 'translateY(40px)', opacity:0 },
     enter: { transform: 'translateY(0)', opacity:1 },
     leave: { transform: 'translateY(40px)', opacity:0 },
@@ -116,14 +131,14 @@ const Portfolio = () =>{
         <ButtonContainer>
           {filterButtons.map((item, index)=>{
             return (
-              <Button
+              <FilterButton
                 primary={activeButton === index}
                 id={item}
                 data-index={index}
                 key={item}
                 onClick={filterProjects}>
                 {item}
-                </Button>
+                </FilterButton>
               )
             })}
         </ButtonContainer>

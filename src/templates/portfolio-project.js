@@ -4,7 +4,7 @@ import {Button} from '../components/ui/buttons';
 import Img from 'gatsby-image';
 
 const Container = styled.div`
-  padding:5px 20px;
+  padding:10px 20px;
   position:relative;
   display:flex;
    white-space: normal;
@@ -35,8 +35,8 @@ const Image = styled(Img)`
 `
 
 const PortfolioButton = styled(Button)`
-  width:60px;
-  height:25px;
+  width:55px;
+  height:20px;
   line-height:0;
   display:flex;
   justify-content:center;
@@ -49,6 +49,7 @@ const PortfolioButton = styled(Button)`
 `
 const Stack = styled.div`
   color:black;
+  margin-top:3px;
   font-weight:700;
   font-size:.6rem;
 `
