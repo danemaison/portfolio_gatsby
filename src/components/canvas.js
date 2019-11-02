@@ -31,7 +31,7 @@ class Canvas extends React.Component{
     let { particles } = this.state;
     const canvas = this.ref.current;
     const context = canvas.getContext('2d');
-    const direction = this.mouseX / window.innerWidth * 2 - 1;
+    // const direction = this.mouseX / window.innerWidth * 2 - 1;
 
     canvas.width = window.innerWidth * 2;
     canvas.height = window.innerHeight * 2;
@@ -60,7 +60,7 @@ class Canvas extends React.Component{
       if(particle.alpha <= 0) return false;
       // particle.y += particle.speed;
       // particle.x += direction * 2;
-      particle.y += direction * 2;
+      // particle.y += direction * 2;
       particle.x += particle.speed
       context.beginPath();
       context.fillStyle = '#127EB1';
