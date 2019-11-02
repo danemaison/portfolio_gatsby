@@ -33,8 +33,28 @@ const StackBody = styled.div`
   text-align: center;
   font-weight:700;
 `
+
+const StyledSpan = styled.span`
+  position:relative;
+  display:inline-block;
+  white-space:nowrap;
+  z-index:1;
+  &::after{
+    content:'';
+    width:100%;
+    left:0;
+    bottom:0;
+    position:absolute;
+    height:35%;
+    background-color:rgb(80, 200, 250, .3);
+    z-index:-1;
+  }
+`
 const renderCustom = new rehypeReact({
   createElement: React.createElement,
+  components:{
+    span: StyledSpan
+  }
 }).Compiler;
 
 const About = ()=>{
