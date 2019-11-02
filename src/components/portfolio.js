@@ -37,6 +37,7 @@ const Projects = styled.div`
   /* width:200vw; */
   white-space: nowrap;
   overflow-x:scroll;
+  overflow-y:hidden;
   >div {
     width:85vw;
     display:inline-block;
