@@ -7,8 +7,8 @@ const Container = styled.div`
   padding:5px 20px;
   position:relative;
   display:flex;
+   white-space: normal;
   flex-direction: column;
-  width: 100%;
   margin-bottom: 15px;
 `
 const SubHeader = styled.div`

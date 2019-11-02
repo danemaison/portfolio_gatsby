@@ -10,11 +10,9 @@ import { animated, useTransition, config } from 'react-spring';
 const Container = styled.div`
   display:flex;
   flex-direction: column;
-  width:80%;
-  margin: auto;
+  width:100%;
 `
 const Header = styled.div`
-  width:100%;
   margin-bottom:20px;
   text-align: center;
 `
@@ -22,8 +20,7 @@ const Header = styled.div`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width:50%;
-  margin:auto;
+  margin: 0 5%;
   margin-bottom:20px;
   >button{
     margin-right:5px;
@@ -34,16 +31,15 @@ const ButtonContainer = styled.div`
 `
 
 const Projects = styled.div`
-  display:flex;
+  /* display:flex;
   flex-wrap:wrap;
-  justify-content: space-around;
-  min-height:100vh;
+  justify-content: space-around; */
+  /* width:200vw; */
+  white-space: nowrap;
+  overflow-x:scroll;
   >div {
-    width:50%;
-  }
-  @media(max-width:700px){
-    display:block;
-    overflow-x:scroll;
+    width:85vw;
+    display:inline-block;
   }
 `
 
@@ -108,27 +104,29 @@ const Portfolio = () =>{
   }
 
   return(
-    <Container id="projects" >
-      <Header>
-        <SectionTitle>
-          Projects
-        </SectionTitle>
-        Check out what I've been working on
-      </Header>
-      <ButtonContainer>
-        {filterButtons.map((item, index)=>{
-          return (
-            <Button
-              primary={activeButton === index}
-              id={item}
-              data-index={index}
-              key={item}
-              onClick={filterProjects}>
-              {item}
-              </Button>
-            )
-          })}
-      </ButtonContainer>
+    <>
+      <Container id="projects" >
+        <Header>
+          <SectionTitle>
+            Projects
+          </SectionTitle>
+          Check out what I've been working on
+        </Header>
+        <ButtonContainer>
+          {filterButtons.map((item, index)=>{
+            return (
+              <Button
+                primary={activeButton === index}
+                id={item}
+                data-index={index}
+                key={item}
+                onClick={filterProjects}>
+                {item}
+                </Button>
+              )
+            })}
+        </ButtonContainer>
+      </Container>
       <Projects>
         {transition.map(({item, props, key})=>{
           return(
@@ -138,7 +136,7 @@ const Portfolio = () =>{
           );
         })}
       </Projects>
-    </Container>
+    </>
   )
 
 }
