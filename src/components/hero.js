@@ -11,7 +11,7 @@ const Container = styled.div`
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  height:calc(90vh - 100px);
+  min-height: calc(85vh - 100px);
 `
 
 const Header = styled(animated.div)`
