@@ -36,7 +36,7 @@ class Canvas extends React.Component{
     canvas.width = window.innerWidth * 2;
     canvas.height = window.innerHeight * 2;
     canvas.style.width = `${window.innerWidth}px`;
-    canvas.style.height = `${window.innerHeight}px`;
+    canvas.style.height = `${window.innerHeight - 100}px`;
 
     canvas.style.position = 'absolute';
     canvas.style.zIndex = '1';
@@ -51,18 +51,19 @@ class Canvas extends React.Component{
         y: Math.random() * window.innerWidth * 2,
         x: -5,
         alpha: Math.random() * .75 + .25,
-        speed: Math.random() * 3 + 1,
+        speed: Math.random() * 3 + 2,
       })
     }
 
     particles = particles.filter(particle=>{
-      if(particle.y > canvas.height) return false;
+      if(particle.x > window.innerWidth * 2) return false;
       if(particle.alpha <= 0) return false;
       // particle.y += particle.speed;
       // particle.x += direction * 2;
       // particle.y += direction * 2;
       particle.x += particle.speed
       context.beginPath();
+      // context.fillStyle = '#127EB1';
       context.fillStyle = '#127EB1';
       // context.arc(particle.x, particle.y, 4, 0, 2 * Math.PI);
       context.rect(particle.x, particle.y, 10, 10);
@@ -85,7 +86,6 @@ class Canvas extends React.Component{
     return (
       <>
         <canvas onMouseMove={this.getMouseCoords } ref={this.ref} />
-        <Shadow/>
       </>
     )
   }
