@@ -22,7 +22,7 @@ const FilterButton = styled(Button)`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0 5%;
+  margin: 0 1%;
   margin-bottom:20px;
   >button{
     margin-right:5px;
@@ -37,13 +37,13 @@ const Projects = styled.div`
   flex-wrap:wrap;
   justify-content: space-around; */
   /* width:200vw; */
-  min-height:40vh;
+  min-height:45vh;
   white-space: nowrap;
   overflow-x:scroll;
   overflow-y:hidden;
 
   &::-webkit-scrollbar {
-    -webkit-appearance: none;
+    /* -webkit-appearance: none; */
     height:5px;
 
   }
