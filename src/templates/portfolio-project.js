@@ -4,7 +4,7 @@ import {Button} from '../components/ui/buttons';
 import Img from 'gatsby-image';
 
 const Container = styled.div`
-  padding:10px 20px;
+  padding:12px 10px;
   position:relative;
   display:flex;
    white-space: normal;

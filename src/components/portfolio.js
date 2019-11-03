@@ -13,6 +13,7 @@ const Container = styled.div`
   width:100%;
 `
 const Header = styled.div`
+  margin-top:-5px;
   margin-bottom:20px;
   text-align: center;
 `
@@ -53,7 +54,7 @@ const Projects = styled.div`
   }
 
   >div {
-    width:85vw;
+    width:90vw;
     display:inline-block;
   }
 `
@@ -126,7 +127,6 @@ const Portfolio = () =>{
           <SectionTitle>
             Projects
           </SectionTitle>
-          Check out what I've been working on
         </Header>
         <ButtonContainer>
           {filterButtons.map((item, index)=>{

@@ -6,7 +6,7 @@ const SectionTitle = styled.div`
   justify-content: center;
   position: relative;
   color:white;
-  margin:30px 0;
+  margin:12px 0;
   font-size:23px;
   font-weight:700;
   text-transform: uppercase;

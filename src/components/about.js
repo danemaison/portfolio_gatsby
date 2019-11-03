@@ -8,7 +8,8 @@ import { Element } from 'react-scroll';
 const Container = styled.div`
   display:flex;
   flex-direction: column;
-  margin:10% 5%;
+  margin:50px 5%;
+  margin-top:100px;
   justify-content: center;
   align-items: center;
 `
