@@ -92,7 +92,11 @@ const Contact = () => {
           LinkedIn
         </LinkWrapper>
         <LinkWrapper>
-          <Anchor target="_blank" aria-label="Resume">
+          <Anchor
+            target="_blank"
+            aria-label="Resume"
+            href="https://www.dropbox.com/s/lsr7gwxyoyg8o3t/Dane%20Maison%20-%20Resume.pdf?dl=0"
+          >
             <Icon icon={faFile} />
           </Anchor>
           Resume
