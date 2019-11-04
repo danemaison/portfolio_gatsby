@@ -15,27 +15,38 @@ const Container = styled.div`
   height:30vh;
 `
 const Body = styled.div`
-margin-top:30px;
-text-align:center;
+  margin-top:30px;
+  text-align:center;
 `
 const Email = styled.div`
   font-weight:700;
+`
+
+const LinkWrapper = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  font-size:.5rem;
+  font-weight:300;
 `
 
 const ButtonContainer = styled.div`
   display:flex;
   justify-content:space-around;
   align-items:center;
-  button {
-    margin-right:1rem;
+  div {
+    margin-right:1.5rem;
   }
-  button:last-child{
+  div:last-child{
     margin-right:0;
   }
 `
-const Button = styled.button`
+const Anchor = styled.a`
   border: 2px solid #127EB1;
+  color:black;
   border-radius:50%;
+  margin-bottom:5px;
   width: 2.5rem;
   height:2.5rem;
   display:flex;
@@ -47,8 +58,8 @@ const Button = styled.button`
     cursor:pointer;
     background-color:#127EB1;
     color:white;
-
   }
+
 `
 const Icon = styled(FontAwesomeIcon)`
   font-size: 1rem;
@@ -62,15 +73,36 @@ const Contact = () =>{
         Want to talk? Send me an email at
         <Email>danemaison@gmail.com</Email>
         <ButtonContainer>
-          <Button>
-            <Icon icon={faLinkedinIn}/>
-          </Button>
-          <Button>
-            <Icon icon={faGithub}/>
-          </Button>
-        <Button>
-          <Icon icon={faFile} />
-        </Button>
+          <LinkWrapper>
+
+          <Anchor
+          target="_blank"
+          aria-label="Github"
+          href='https://github.com/danemaison'
+          >
+          <Icon icon={faGithub}/>
+          </Anchor>
+          Github
+          </LinkWrapper>
+          <LinkWrapper>
+          <Anchor
+            target="_blank"
+            aria-label="LinkedIn"
+            href='https://www.linkedin.com/in/dane-maison/'
+          >
+            <Icon icon={faLinkedinIn} />
+          </Anchor>
+          LinkedIn
+        </LinkWrapper>
+        <LinkWrapper>
+          <Anchor
+            target="_blank"
+            aria-label="Resume"
+          >
+            <Icon icon={faFile} />
+          </Anchor>
+          Resume
+          </LinkWrapper>
         </ButtonContainer>
     </Container>
 
