@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import {useSpring, animated, config} from 'react-spring';
-
+import NavItem from './navitem';
 
 
 const Menu = styled.nav`
   position:fixed;
   display: flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:space-evenly;
   align-items:center;
   z-index:5;
   top:50px;
@@ -18,14 +18,20 @@ const Menu = styled.nav`
   background-color: white;
   opacity: ${({ open }) => open ? 1 : 0};
   transition:.5s;
+
 `
 
 const AnimatedMenu = animated(Menu);
+const sections = ['About Me', 'Projects', 'Contact'];
 
 const MobileMenu = ({open, setOpen}) => {
   return(
     <AnimatedMenu open={open} onClick={()=> setOpen(!open)}>
-      <div>Item</div>
+      {
+        sections.map(section => (
+          <NavItem setOpen={setOpen} open={open} mobile={'true'} key={section} section={section} />
+        ))
+      }
     </AnimatedMenu>
   )
 }
