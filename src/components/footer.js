@@ -16,7 +16,7 @@ const Header = styled.div`
 const Subheader = styled.div`
   font-size: .75rem;
   text-transform: uppercase;
-  color:#127EB1;
+  color:${({ theme }) => theme.primary};
   font-weight:700;
   letter-spacing: 5px;
 `

@@ -7,9 +7,9 @@ const Button = styled.button`
   font-size: .6rem;
   width: 100px;
   border-radius: 50px;
-  background-color: ${props => props.primary ? "#127EB1" : "white"};
-  border: 1px solid ${props => props.primary ? "#127EB1" : "#999"};
-  color: ${props => props.primary ? "white" : "#6e6e6e"};
+  background-color: ${({primary, theme}) => primary ? theme.primary : "white"};
+  border: 1px solid ${({primary, theme}) => primary ? theme.primary : "#999"};
+  color: ${({primary, theme}) => primary ? "white" : theme.grey};
   font-weight: 700;
   text-transform: uppercase;
   transition:.2s;

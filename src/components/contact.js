@@ -43,7 +43,7 @@ const ButtonContainer = styled.div`
   }
 `
 const Anchor = styled.a`
-  border: 2px solid #127EB1;
+  border: 2px solid ${({ theme }) => theme.primary};
   color:black;
   border-radius:50%;
   margin-bottom:5px;
@@ -56,7 +56,7 @@ const Anchor = styled.a`
   transition: .5s;
   &:hover{
     cursor:pointer;
-    background-color:#127EB1;
+    background-color:${({ theme }) => theme.primary};
     color:white;
   }
 

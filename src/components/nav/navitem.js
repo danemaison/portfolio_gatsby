@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {Link} from 'react-scroll';
-import {animated, useSpring, config} from 'react-spring';
+import {animated, useSpring} from 'react-spring';
 
 const StyledLink = styled(Link)`
   font-size:.6rem;
@@ -14,7 +14,7 @@ const StyledLink = styled(Link)`
 
   &:hover {
     cursor:pointer;
-    color:#127EB1;
+    color:${({ theme }) => theme.primary};
   }
 `
 
