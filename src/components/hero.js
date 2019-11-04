@@ -11,16 +11,27 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   min-height: calc(85vh - 100px);
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    font-size: 130%;
+  }
+  @media ${({ theme }) => theme.mediaQueries.large} {
+    font-size: 150%;
+    min-height: calc(100vh - 100px);
+    text-align: left;
+    align-items: flex-start;
+    margin-left: 5%;
+  }
 `
 
 const Header = styled(animated.div)`
   margin-top: -90px;
   position: relative;
   z-index: 3;
-  font-size: 2.3rem;
+  font-size: 2.3em;
   line-height: 55px;
-  text-align: center;
+
   > div {
     margin-top: 15px;
   }
@@ -36,6 +47,9 @@ const SubHeader = styled(animated.div)`
   position: relative;
   z-index: 3;
   font-size: 1.1rem;
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    font-size: 1.5rem;
+  }
 `
 
 const HeroButton = styled(Link)`

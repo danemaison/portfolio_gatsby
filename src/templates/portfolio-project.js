@@ -10,6 +10,9 @@ const Container = styled.div`
   white-space: normal;
   flex-direction: column;
   margin-bottom: 15px;
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    padding: 20px 25px;
+  }
 `
 const SubHeader = styled.div`
   width: 100%;

@@ -24,7 +24,8 @@ const ButtonContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  /* margin: 0 1%; */
+  width:100%;
+  margin:auto;
   margin-bottom:20px;
   >button{
     width:25%
@@ -33,13 +34,13 @@ const ButtonContainer = styled.div`
   >button:last-child{
     margin-right:0;
   }
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    width:50%;
+  }
 `
 
 const Projects = styled.div`
-  /* display:flex;
-  flex-wrap:wrap;
-  justify-content: space-around; */
-  /* width:200vw; */
+  display: block;
   min-height: 45vh;
   white-space: nowrap;
   overflow-x: scroll;
@@ -53,10 +54,19 @@ const Projects = styled.div`
     border-radius: 50px;
     background-color: ${({ theme }) => theme.primary};
   }
-
   > div {
     width: 90vw;
     display: inline-block;
+  }
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    font-size: 130%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    > div {
+      width: 50%;
+    }
   }
 `
 
