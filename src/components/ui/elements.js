@@ -27,7 +27,7 @@ const SectionTitle = styled.div`
     bottom:-.3rem;
     left:50%;
     transform: translate(-50%);
-    background-color:#127EB1;
+    background-color:#249ad1;
 
   }
 `
