@@ -29,7 +29,7 @@ const Header = styled(animated.div)`
 const Name = styled.div`
   display:inline-block;
   font-weight:700;
-  color: #249d57;
+  color: #127EB1;
 `
 
 const SubHeader = styled(animated.div)`
@@ -49,8 +49,8 @@ const HeroButton = styled(Link)`
   width: 200px;
   border-radius: 50px;
 
-  background-color: ${props => props.primary ? "#249d57" : "white"};
-  border: 1px solid ${props => props.primary ? "#249d57" : "#999"};
+  background-color: ${props => props.primary ? "#127EB1" : "white"};
+  border: 1px solid ${props => props.primary ? "#127EB1" : "#999"};
   color: ${props => props.primary ? "white" : "#6e6e6e"};
 
 

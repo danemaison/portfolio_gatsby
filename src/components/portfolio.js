@@ -8,6 +8,7 @@ import { animated, useTransition, config } from 'react-spring';
 
 
 const Container = styled.div`
+  margin-top: 150px;
   display:flex;
   flex-direction: column;
   width:100%;
@@ -22,10 +23,12 @@ const FilterButton = styled(Button)`
 `
 const ButtonContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin: 0 1%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* margin: 0 1%; */
   margin-bottom:20px;
   >button{
+    width:25%
     margin-right:5px;
   }
   >button:last-child{
@@ -50,7 +53,7 @@ const Projects = styled.div`
   }
   &::-webkit-scrollbar-thumb {
     border-radius:50px;
-    background-color: #249d57;
+    background-color: #127EB1;
   }
 
   >div {
@@ -98,7 +101,7 @@ const Portfolio = () =>{
   const {edges} = data.allFile;
 
   const [projects, setProjects] = useState(edges)
-  const filterButtons = ['all', 'frontend', 'full-stack', 'other'];
+  const filterButtons = ['all', 'frontend', 'full-stack'];
   const [activeButton, setActiveButton] = useState(0);
   const transition = useTransition(projects, projects => projects.node.id, {
     config: config.gentle,
@@ -127,6 +130,8 @@ const Portfolio = () =>{
           <SectionTitle>
             Projects
           </SectionTitle>
+          <br/>
+          Check out what I've been working on!
         </Header>
         <ButtonContainer>
           {filterButtons.map((item, index)=>{

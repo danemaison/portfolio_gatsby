@@ -3,20 +3,11 @@ import PropTypes from "prop-types"
 import "./layout.css"
 import styled from 'styled-components';
 import NavBar from "../components/navbar";
+import Footer from "../components/footer";
 
 const Main = styled.main`
   /* color:#575757; */
   margin-top: 50px;
-  font-family: 'Montserrat', sans-serif;
-`
-
-const Footer = styled.footer`
-  width:100%;
-  height:150px;
-  background-color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
   font-family: 'Montserrat', sans-serif;
 `
 
@@ -25,9 +16,7 @@ const Layout = ({ children }) => {
     <>
       <NavBar/>
       <Main>{children}</Main>
-      <Footer>
-        <div></div>
-      </Footer>
+      <Footer/>
     </>
   )
 }

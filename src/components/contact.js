@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { SectionTitle } from '../components/ui/elements';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
+import {faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import {faFile} from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
   display:flex;
@@ -32,7 +33,7 @@ const ButtonContainer = styled.div`
   }
 `
 const Button = styled.button`
-  border: 2px solid #249d57;
+  border: 2px solid #127EB1;
   border-radius:50%;
   width: 2.5rem;
   height:2.5rem;
@@ -40,8 +41,12 @@ const Button = styled.button`
   align-items:center;
   background-color:transparent;
   justify-content:center;
+  transition: .5s;
   &:hover{
     cursor:pointer;
+    background-color:#127EB1;
+    color:white;
+
   }
 `
 const Icon = styled(FontAwesomeIcon)`
@@ -62,6 +67,9 @@ const Contact = () =>{
           <Button>
             <Icon icon={faGithub}/>
           </Button>
+        <Button>
+          <Icon icon={faFile} />
+        </Button>
         </ButtonContainer>
     </Container>
 

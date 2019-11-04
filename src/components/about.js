@@ -21,14 +21,17 @@ const Title = styled(SectionTitle)`
   position:relative;
   z-index: 3;
 `
-const StackHeader = styled.div`
+const StackHeader = styled(SectionTitle)`
   text-align:center;
   font-size:1.2rem;
   margin:auto;
   margin-top:50px;
-  margin-bottom:10px;
-  color:#249d57;
+  margin-bottom:30px;
+  /* color:#249d57; */
   font-weight:700;
+  /* &::after{
+    width: 250px;
+  } */
 `
 const StackBody = styled.div`
   text-align: center;
@@ -47,7 +50,7 @@ const StyledSpan = styled.span`
     bottom:0;
     position:absolute;
     height:35%;
-    background-color:#a8eec1;
+    background-color:#c4ebff;
     z-index:-1;
   }
 `
@@ -83,8 +86,9 @@ const About = ()=>{
         {renderCustom(htmlAst)}
       </Body>
       <StackHeader>
-        Some tools I've used:
+        Some tools I've used
       </StackHeader>
+
       <StackBody>
         {stack}
       </StackBody>

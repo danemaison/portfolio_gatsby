@@ -38,7 +38,7 @@ const SubBrand = styled.div`
   font-size:.5rem;
   font-weight:700;
   text-transform:uppercase;
-  color:	#249d57;
+  color:	#127EB1;
 `
 
 const Name = styled.div``;

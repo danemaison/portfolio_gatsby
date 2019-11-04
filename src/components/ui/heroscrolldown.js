@@ -5,7 +5,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { useSpring, animated, config } from 'react-spring';
 import {Link} from 'react-scroll';
 const StyledIcon = styled(FontAwesomeIcon)`
-  color: #249d57;
+  color: #127EB1;
 `
 
 const Wrapper = styled.div`
