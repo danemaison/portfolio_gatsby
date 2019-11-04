@@ -1,25 +1,24 @@
-import React, {useState} from 'react';
-import styled from 'styled-components';
-import PortfolioItem from '../templates/portfolio-project';
-import { useStaticQuery, graphql } from "gatsby";
-import {Button} from '../components/ui/buttons';
-import {SectionTitle} from '../components/ui/elements';
-import { animated, useTransition, config } from 'react-spring';
-
+import React, { useState } from "react"
+import styled from "styled-components"
+import PortfolioItem from "../templates/portfolio-project"
+import { useStaticQuery, graphql } from "gatsby"
+import { Button } from "../components/ui/buttons"
+import { SectionTitle } from "../components/ui/elements"
+import { animated, useTransition, config } from "react-spring"
 
 const Container = styled.div`
   margin-top: 150px;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  width:100%;
+  width: 100%;
 `
 const Header = styled.div`
-  margin-top:-5px;
-  margin-bottom:20px;
+  margin-top: -5px;
+  margin-bottom: 20px;
   text-align: center;
 `
 const FilterButton = styled(Button)`
-  height:25px;
+  height: 25px;
 `
 const ButtonContainer = styled.div`
   display: flex;
@@ -41,37 +40,36 @@ const Projects = styled.div`
   flex-wrap:wrap;
   justify-content: space-around; */
   /* width:200vw; */
-  min-height:45vh;
+  min-height: 45vh;
   white-space: nowrap;
-  overflow-x:scroll;
-  overflow-y:hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
 
   &::-webkit-scrollbar {
     /* -webkit-appearance: none; */
-    height:5px;
-
+    height: 5px;
   }
   &::-webkit-scrollbar-thumb {
-    border-radius:50px;
+    border-radius: 50px;
     background-color: ${({ theme }) => theme.primary};
   }
 
-  >div {
-    width:90vw;
-    display:inline-block;
+  > div {
+    width: 90vw;
+    display: inline-block;
   }
 `
 
-const Portfolio = () =>{
+const Portfolio = () => {
   const data = useStaticQuery(graphql`
     query {
-     allFile(
+      allFile(
         filter: {
           sourceInstanceName: { eq: "content" }
           extension: { eq: "md" }
           relativeDirectory: { regex: "/portfolio/" }
         }
-       sort: { fields: [dir], order: DESC }
+        sort: { fields: [dir], order: DESC }
       ) {
         edges {
           node {
@@ -82,9 +80,11 @@ const Portfolio = () =>{
                 stack
                 description
                 type
+                source
+                live
                 image {
-                  childImageSharp{
-                    fluid(maxWidth:800, quality:80){
+                  childImageSharp {
+                    fluid(maxWidth: 800, quality: 80) {
                       ...GatsbyImageSharpFluid_tracedSVG
                     }
                   }
@@ -96,71 +96,69 @@ const Portfolio = () =>{
         }
       }
     }
-  `);
+  `)
 
-  const {edges} = data.allFile;
+  const { edges } = data.allFile
 
   const [projects, setProjects] = useState(edges)
-  const filterButtons = ['all', 'frontend', 'full-stack'];
-  const [activeButton, setActiveButton] = useState(0);
+  const filterButtons = ["all", "frontend", "full-stack"]
+  const [activeButton, setActiveButton] = useState(0)
   const transition = useTransition(projects, projects => projects.node.id, {
     config: config.gentle,
-    from: { transform: 'translateY(40px)', opacity:0 },
-    enter: { transform: 'translateY(0)', opacity:1 },
-    leave: { transform: 'translateY(40px)', opacity:0 },
-  });
+    from: { transform: "translateY(40px)", opacity: 0 },
+    enter: { transform: "translateY(0)", opacity: 1 },
+    leave: { transform: "translateY(40px)", opacity: 0 },
+  })
 
   const filterProjects = e => {
-    const index = parseInt(e.target.getAttribute('data-index'));
-    const {id} = e.currentTarget;
-    setActiveButton(index);
-    setProjects([]);
-    setTimeout(()=>{
-      setProjects(edges.filter(project => {
-        return project.node.childMarkdownRemark.frontmatter.type.includes(id)
-      })
+    const index = parseInt(e.target.getAttribute("data-index"))
+    const { id } = e.currentTarget
+    setActiveButton(index)
+    setProjects([])
+    setTimeout(() => {
+      setProjects(
+        edges.filter(project => {
+          return project.node.childMarkdownRemark.frontmatter.type.includes(id)
+        })
       )
-    }, 750);
+    }, 750)
   }
 
-  return(
+  return (
     <>
-      <Container id="projects" >
+      <Container id="projects">
         <Header>
-          <SectionTitle>
-            Projects
-          </SectionTitle>
-          <br/>
+          <SectionTitle>Projects</SectionTitle>
+          <br />
           Check out what I've been working on!
         </Header>
         <ButtonContainer>
-          {filterButtons.map((item, index)=>{
+          {filterButtons.map((item, index) => {
             return (
               <FilterButton
                 primary={activeButton === index}
                 id={item}
                 data-index={index}
                 key={item}
-                onClick={filterProjects}>
+                onClick={filterProjects}
+              >
                 {item}
-                </FilterButton>
-              )
-            })}
+              </FilterButton>
+            )
+          })}
         </ButtonContainer>
       </Container>
       <Projects>
-        {transition.map(({item, props, key})=>{
-          return(
+        {transition.map(({ item, props, key }) => {
+          return (
             <animated.div key={key} style={props}>
-              <PortfolioItem data={item.node}/>
+              <PortfolioItem data={item.node} />
             </animated.div>
-          );
+          )
         })}
       </Projects>
     </>
   )
-
 }
 
-
-export default Portfolio;
+export default Portfolio
