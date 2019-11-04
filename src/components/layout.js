@@ -6,7 +6,6 @@ import NavBar from "../components/navbar";
 
 const Main = styled.main`
   /* color:#575757; */
-  color:black;
   margin-top: 50px;
   font-family: 'Montserrat', sans-serif;
 `
@@ -27,7 +26,7 @@ const Layout = ({ children }) => {
       <NavBar/>
       <Main>{children}</Main>
       <Footer>
-        <div>Dane Maison</div>
+        <div></div>
       </Footer>
     </>
   )

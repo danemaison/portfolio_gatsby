@@ -26,7 +26,7 @@ const Header = styled.div`
   font-weight:800;
   text-align: left;
   width:100%;
-  color:black;
+  /* color:black; */
 `
 
 const Image = styled(Img)`
@@ -48,7 +48,7 @@ const PortfolioButton = styled(Button)`
   }
 `
 const Stack = styled.div`
-  color:black;
+  /* color:black; */
   margin-top:3px;
   font-weight:700;
   font-size:.6rem;

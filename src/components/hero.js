@@ -20,7 +20,7 @@ const Header = styled(animated.div)`
   z-index: 3;
   font-size:2.3rem;
   line-height:55px;
-  text-align:left;
+  text-align:center;
   > div {
     margin-top:15px;
   }
@@ -29,14 +29,13 @@ const Header = styled(animated.div)`
 const Name = styled.div`
   display:inline-block;
   font-weight:700;
-  color: #127EB1;
+  color: #249d57;
 `
 
 const SubHeader = styled(animated.div)`
   position: relative;
   z-index: 3;
   font-size: 1.1rem;
-  text-align:left;
 `
 
 const HeroButton = styled(Link)`
@@ -50,8 +49,8 @@ const HeroButton = styled(Link)`
   width: 200px;
   border-radius: 50px;
 
-  background-color: ${props => props.primary ? "#127EB1" : "white"};
-  border: 1px solid ${props => props.primary ? "#127EB1" : "#999"};
+  background-color: ${props => props.primary ? "#249d57" : "white"};
+  border: 1px solid ${props => props.primary ? "#249d57" : "#999"};
   color: ${props => props.primary ? "white" : "#6e6e6e"};
 
 

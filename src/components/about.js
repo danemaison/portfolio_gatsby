@@ -27,7 +27,7 @@ const StackHeader = styled.div`
   margin:auto;
   margin-top:50px;
   margin-bottom:10px;
-  color:#127EB1;
+  color:#249d57;
   font-weight:700;
 `
 const StackBody = styled.div`
@@ -47,7 +47,7 @@ const StyledSpan = styled.span`
     bottom:0;
     position:absolute;
     height:35%;
-    background-color:rgb(80, 200, 250, .3);
+    background-color:#a8eec1;
     z-index:-1;
   }
 `

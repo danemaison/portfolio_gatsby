@@ -50,7 +50,7 @@ const Projects = styled.div`
   }
   &::-webkit-scrollbar-thumb {
     border-radius:50px;
-    background-color: #127EB1;
+    background-color: #249d57;
   }
 
   >div {

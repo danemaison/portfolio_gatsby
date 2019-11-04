@@ -7,8 +7,8 @@ const Button = styled.button`
   font-size: .6rem;
   width: 100px;
   border-radius: 50px;
-  background-color: ${props => props.primary ? "#127EB1" : "white"};
-  border: 1px solid ${props => props.primary ? "#127EB1" : "#999"};
+  background-color: ${props => props.primary ? "#249d57" : "white"};
+  border: 1px solid ${props => props.primary ? "#249d57" : "#999"};
   color: ${props => props.primary ? "white" : "#6e6e6e"};
   font-weight: 700;
   text-transform: uppercase;

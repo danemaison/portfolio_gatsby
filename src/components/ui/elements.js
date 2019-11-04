@@ -5,7 +5,7 @@ const SectionTitle = styled.div`
   display:flex;
   justify-content: center;
   position: relative;
-  color:white;
+  color:#212934;
   margin:12px 0;
   font-size:23px;
   font-weight:700;
@@ -13,13 +13,14 @@ const SectionTitle = styled.div`
   &::after{
     content: "";
     z-index: -1;
+    bottom:0;
     position: absolute;
     width:180px;
     left:50%;
-    transform: translate(-50%) rotateZ(-2deg);
-    background-color:#127EB1;
-    height:100%;
 
+    transform: translate(-50%);
+    background-color:	#a8eec1;
+    height:35%;
   }
 `
 
