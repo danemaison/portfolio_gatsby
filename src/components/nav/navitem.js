@@ -16,6 +16,9 @@ const StyledLink = styled(Link)`
     cursor: pointer;
     color: ${({ theme }) => theme.primary};
   }
+  :last-child {
+    margin-bottom: ${({ mobile }) => (mobile ? "20vh" : "0")};
+  }
 `
 
 const AnimatedLink = animated(StyledLink)

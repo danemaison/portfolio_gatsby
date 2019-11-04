@@ -1,23 +1,24 @@
-import React from 'react';
-import styled from 'styled-components';
-import NavItem from './navitem';
+import React from "react"
+import styled from "styled-components"
+import NavItem from "./navitem"
 
 const Container = styled.div`
- @media ${({ theme }) => theme.mediaQueries.small}{
-    display:none;
+  display: none;
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    display: flex;
   }
 `
 
-const sections = ['About Me', 'Projects', 'Contact'];
+const sections = ["About Me", "Projects", "Contact"]
 
-const DesktopMenu = ()=>{
-  return(
-    <Container >
-      {sections.map(section=>(
+const DesktopMenu = () => {
+  return (
+    <Container>
+      {sections.map(section => (
         <NavItem key={section} section={section} />
       ))}
-    </Container >
+    </Container>
   )
 }
 
-export default DesktopMenu;
+export default DesktopMenu
