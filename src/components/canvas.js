@@ -61,7 +61,9 @@ class Canvas extends React.Component {
     window.requestAnimationFrame(this.tick)
   }
   componentDidMount() {
-    this.tick()
+    if (typeof window !== "undefined" && window.innerWidth > 700) {
+      this.tick()
+    }
   }
   render() {
     return (
