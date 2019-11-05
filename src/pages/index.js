@@ -5,10 +5,12 @@ import Hero from "../components/hero"
 import About from "../components/about"
 import Canvas from "../components/canvas"
 import Contact from "../components/contact"
+import SEO from "../components/seo"
 
 export default function IndexPage({ data }) {
   return (
     <Layout>
+      <SEO title="Dane Maison | Full Stack Developer" />
       <Canvas />
       <Hero />
       <About />
