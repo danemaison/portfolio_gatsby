@@ -29,7 +29,7 @@ const MobileMenu = ({ open, setOpen }) => {
         <NavItem
           setOpen={setOpen}
           open={open}
-          mobile={"true"}
+          mobile
           key={section}
           section={section}
         />

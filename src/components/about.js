@@ -18,7 +18,7 @@ const Container = styled.div`
 `
 
 const Body = styled.div`
-  text-align: center;
+  text-align: left;
 `
 const Title = styled(SectionTitle)`
   position: relative;

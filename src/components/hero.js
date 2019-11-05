@@ -11,7 +11,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
   min-height: calc(85vh - 100px);
   @media ${({ theme }) => theme.mediaQueries.medium} {
     font-size: 130%;
