@@ -3,7 +3,6 @@ import styled from "styled-components"
 import { SectionTitle } from "../components/ui/elements"
 import { useStaticQuery, graphql } from "gatsby"
 import rehypeReact from "rehype-react"
-import { Element } from "react-scroll"
 
 const Container = styled.div`
   display: flex;
@@ -30,11 +29,7 @@ const StackHeader = styled(SectionTitle)`
   margin: auto;
   margin-top: 50px;
   margin-bottom: 30px;
-  /* color:#249d57; */
   font-weight: 700;
-  /* &::after{
-    width: 250px;
-  } */
 `
 const StackBody = styled.div`
   text-align: center;
@@ -85,7 +80,6 @@ const About = () => {
       <Title>About Me</Title>
       <Body>{renderCustom(htmlAst)}</Body>
       <StackHeader>Some tools I've used</StackHeader>
-
       <StackBody>{stack}</StackBody>
     </Container>
   )

@@ -1,16 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 
-const Shadow = styled.div`
-  width: 100%;
-  height: 100px;
-  background-color: transparent;
-  box-shadow: inset 0 -50px 50px -10px white;
-  position: absolute;
-  bottom: -80px;
-  left: 0;
-  z-index: 2;
-`
 class Canvas extends React.Component {
   constructor(props) {
     super(props)
@@ -30,7 +20,6 @@ class Canvas extends React.Component {
     let { particles } = this.state
     const canvas = this.ref.current
     const context = canvas.getContext("2d")
-    // const direction = this.mouseX / window.innerWidth * 2 - 1;
 
     canvas.width = window.innerWidth * 2
     canvas.height = window.innerHeight * 2
@@ -45,8 +34,6 @@ class Canvas extends React.Component {
     if (this.count % 7 === 0) {
       this.count = 0
       particles.push({
-        // x: Math.random() * window.innerWidth * 2,
-        // y: -5,
         y: Math.random() * window.innerWidth * 2,
         x: -5,
         alpha: Math.random() * 0.75 + 0.25,
@@ -57,14 +44,9 @@ class Canvas extends React.Component {
     particles = particles.filter(particle => {
       if (particle.x > window.innerWidth * 2) return false
       if (particle.alpha <= 0) return false
-      // particle.y += particle.speed;
-      // particle.x += direction * 2;
-      // particle.y += direction * 2;
       particle.x += particle.speed
       context.beginPath()
-      // context.fillStyle = '#127EB1';
       context.fillStyle = "#127EB1"
-      // context.arc(particle.x, particle.y, 4, 0, 2 * Math.PI);
       context.rect(particle.x, particle.y, 10, 10)
       context.globalAlpha = particle.alpha
       context.fill()
@@ -75,7 +57,6 @@ class Canvas extends React.Component {
     this.setState({ particles })
   }
   tick() {
-    if (!this.ref.current) return null
     this.moveParticles()
     window.requestAnimationFrame(this.tick)
   }
@@ -83,15 +64,11 @@ class Canvas extends React.Component {
     this.tick()
   }
   render() {
-    if (window.innerWidth > 700) {
-      return (
-        <>
-          <canvas onMouseMove={this.getMouseCoords} ref={this.ref} />
-        </>
-      )
-    } else {
-      return null
-    }
+    return (
+      <>
+        <canvas onMouseMove={this.getMouseCoords} ref={this.ref} />
+      </>
+    )
   }
 }
 

@@ -14,10 +14,7 @@ const Container = styled.div`
   margin-bottom: 80px;
   height: 30vh;
 `
-const Body = styled.div`
-  margin-top: 30px;
-  text-align: center;
-`
+
 const Email = styled.div`
   font-weight: 700;
 `

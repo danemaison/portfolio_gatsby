@@ -9,7 +9,7 @@ import Contact from "../components/contact"
 export default function IndexPage({ data }) {
   return (
     <Layout>
-      <Canvas />
+      {window.innerWidth > 700 && <Canvas />}
       <Hero />
       <About />
       <Portfolio />
