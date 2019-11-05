@@ -68,7 +68,12 @@ class Canvas extends React.Component {
   render() {
     return (
       <>
-        <canvas onMouseMove={this.getMouseCoords} ref={this.ref} />
+        <canvas
+          width={0}
+          height={0}
+          onMouseMove={this.getMouseCoords}
+          ref={this.ref}
+        />
       </>
     )
   }
