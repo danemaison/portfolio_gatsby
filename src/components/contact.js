@@ -70,6 +70,7 @@ const Contact = () => {
       <ButtonContainer>
         <LinkWrapper>
           <Anchor
+            rel="noreferrer"
             target="_blank"
             aria-label="Github"
             href="https://github.com/danemaison"

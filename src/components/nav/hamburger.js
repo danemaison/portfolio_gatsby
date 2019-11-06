@@ -47,7 +47,11 @@ const Burger = styled.button`
 
 const Hamburger = ({ open, setOpen }) => {
   return (
-    <Burger open={open} onClick={() => setOpen(!open)}>
+    <Burger
+      aria-label="Toggle mobile menu"
+      open={open}
+      onClick={() => setOpen(!open)}
+    >
       <div />
       <div />
       <div />
