@@ -123,6 +123,7 @@ const Hero = () => {
             I'm a <TextRotator />
           </SubHeader>
           <AnimatedButton
+            aria-label="Learn More"
             primary="true"
             style={ButtonSpring}
             to="about-me"

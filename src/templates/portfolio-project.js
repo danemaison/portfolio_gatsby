@@ -17,7 +17,7 @@ const Container = styled.div`
 const SubHeader = styled.div`
   width: 100%;
   text-align: left;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
 `
 const Row = styled.div`
   display: flex;
@@ -29,7 +29,6 @@ const Header = styled.div`
   font-weight: 800;
   text-align: left;
   width: 100%;
-  /* color:black; */
 `
 
 const Image = styled(Img)`
@@ -51,10 +50,9 @@ const PortfolioButton = styled(Button)`
   }
 `
 const Stack = styled.div`
-  /* color:black; */
-  margin-top: 3px;
+  margin-top: 5px;
   font-weight: 700;
-  font-size: 0.6rem;
+  font-size: 0.75rem;
 `
 const Anchor = styled.a`
   text-decoration: none;
@@ -73,11 +71,23 @@ export default function PortfolioItem({ data }) {
       <HeaderRow>
         <Header>{title}</Header>
         <Row>
-          <Anchor target="_blank" aria-label="Live" href={live}>
-            <PortfolioButton primary>Live</PortfolioButton>
+          <Anchor
+            target="_blank"
+            aria-label="Live"
+            rel="noreferrer"
+            href={live}
+          >
+            <PortfolioButton primary aria-label="Live link">
+              Live
+            </PortfolioButton>
           </Anchor>
-          <Anchor target="_blank" aria-label="Source" href={source}>
-            <PortfolioButton>Source</PortfolioButton>
+          <Anchor
+            rel="noreferrer"
+            target="_blank"
+            aria-label="Source"
+            href={source}
+          >
+            <PortfolioButton aria-label="Source link">Source</PortfolioButton>
           </Anchor>
         </Row>
       </HeaderRow>

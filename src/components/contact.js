@@ -80,6 +80,7 @@ const Contact = () => {
         </LinkWrapper>
         <LinkWrapper>
           <Anchor
+            rel="noreferrer"
             target="_blank"
             aria-label="LinkedIn"
             href="https://www.linkedin.com/in/dane-maison/"
@@ -90,6 +91,7 @@ const Contact = () => {
         </LinkWrapper>
         <LinkWrapper>
           <Anchor
+            rel="noreferrer"
             target="_blank"
             aria-label="Resume"
             href="https://www.dropbox.com/s/lsr7gwxyoyg8o3t/Dane%20Maison%20-%20Resume.pdf?dl=0"

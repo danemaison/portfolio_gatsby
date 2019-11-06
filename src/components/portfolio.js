@@ -146,6 +146,7 @@ const Portfolio = () => {
           {filterButtons.map((item, index) => {
             return (
               <FilterButton
+                aria-label={`Filter by ${item}`}
                 primary={activeButton === index}
                 id={item}
                 data-index={index}
