@@ -4,8 +4,7 @@ A portfolio site I created for myself. I decided to use Gatsby for its preforman
 
 # Live Site
 
-Check it out at
-https://danemaison.com
+Check it out at https://danemaison.com
 
 # Technologies Used
 
@@ -18,4 +17,4 @@ https://danemaison.com
 
 # Preview
 
-![Portfolio](src/content/9_portfolio/portfolio.png)
+![Portfolio](src/content/portfolio/9_portfolio/portfolio.png)
