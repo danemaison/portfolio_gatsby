@@ -38,10 +38,9 @@ const Burger = styled.button`
     :last-child {
       transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
     }
-
-    @media ${({ theme }) => theme.mediaQueries.medium} {
-      display: none;
-    }
+  }
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    display: none;
   }
 `
 
