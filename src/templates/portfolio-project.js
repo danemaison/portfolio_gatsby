@@ -71,24 +71,31 @@ export default function PortfolioItem({ data }) {
       <HeaderRow>
         <Header>{title}</Header>
         <Row>
-          <Anchor
-            target="_blank"
-            aria-label="Live"
-            rel="noreferrer"
-            href={live}
-          >
-            <PortfolioButton primary aria-label="Live link">
-              Live
-            </PortfolioButton>
-          </Anchor>
-          <Anchor
-            rel="noreferrer"
-            target="_blank"
-            aria-label="Source"
-            href={source}
-          >
-            <PortfolioButton aria-label="Source link">Source</PortfolioButton>
-          </Anchor>
+          {title !== "danemaison.com" && (
+            <Anchor
+              target="_blank"
+              aria-label="Live"
+              rel="noreferrer"
+              href={live}
+            >
+              <PortfolioButton primary aria-label="Live link">
+                Live
+              </PortfolioButton>
+            </Anchor>
+          )}
+          {title !== "freshlyforagedofficial.com" &&
+            title !== "nevadahomefitness.com" && (
+              <Anchor
+                rel="noreferrer"
+                target="_blank"
+                aria-label="Source"
+                href={source}
+              >
+                <PortfolioButton aria-label="Source link">
+                  Source
+                </PortfolioButton>
+              </Anchor>
+            )}
         </Row>
       </HeaderRow>
       <SubHeader>

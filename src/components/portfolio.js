@@ -23,19 +23,33 @@ const FilterButton = styled(Button)`
 const ButtonContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  width:100%;
-  margin:auto;
-  margin-bottom:20px;
-  >button{
-    width:25%
-    margin-right:5px;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 20px;
+  > button {
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    width: 20%;
+    margin-right: 0;
   }
-  >button:last-child{
-    margin-right:0;
+  > button:last-child {
+    margin-right: 0;
+    border-right: 1px solid ${({ theme }) => theme.grey};
+  }
+  > button:first-child {
+    border-left: 1px solid ${({ theme }) => theme.grey};
+  }
+
+  > button:hover {
+    transform: none;
+  }
+  > button:active {
+    transform: none;
   }
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    width:50%;
+    width: 50%;
   }
 `
 
@@ -47,7 +61,6 @@ const Projects = styled.div`
   overflow-y: hidden;
 
   &::-webkit-scrollbar {
-    /* -webkit-appearance: none; */
     height: 5px;
   }
   &::-webkit-scrollbar-thumb {
@@ -111,7 +124,7 @@ const Portfolio = () => {
   const { edges } = data.allFile
 
   const [projects, setProjects] = useState(edges)
-  const filterButtons = ["all", "frontend", "full-stack"]
+  const filterButtons = ["all", "frontend", "full-stack", "work", "other"]
   const [activeButton, setActiveButton] = useState(0)
   const transition = useTransition(projects, projects => projects.node.id, {
     config: config.gentle,
