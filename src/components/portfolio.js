@@ -33,15 +33,11 @@ const ButtonContainer = styled.div`
     border-radius: 0;
     width: 20%;
     margin-right: 0;
+    border-color: ${({ theme }) => theme.grey};
   }
   > button:last-child {
     margin-right: 0;
-    border-right: 1px solid ${({ theme }) => theme.grey};
   }
-  > button:first-child {
-    border-left: 1px solid ${({ theme }) => theme.grey};
-  }
-
   > button:hover {
     transform: none;
   }
@@ -50,6 +46,12 @@ const ButtonContainer = styled.div`
   }
   @media ${({ theme }) => theme.mediaQueries.medium} {
     width: 50%;
+    > button:first-child {
+      border-left: 1px solid ${({ theme }) => theme.grey};
+    }
+    > button:last-child {
+      border-right: 1px solid ${({ theme }) => theme.grey};
+    }
   }
 `
 
