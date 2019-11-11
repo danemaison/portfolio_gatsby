@@ -95,7 +95,7 @@ const Contact = () => {
             rel="noreferrer"
             target="_blank"
             aria-label="Resume"
-            href="https://www.dropbox.com/s/lsr7gwxyoyg8o3t/Dane%20Maison%20-%20Resume.pdf?dl=0"
+            href="https://www.dropbox.com/s/9nkrxavtnvocx3o/Dane%20Maison%20-%20Resume.pdf?dl=0"
           >
             <Icon icon={faFile} />
           </Anchor>
