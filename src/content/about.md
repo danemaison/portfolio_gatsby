@@ -1,5 +1,5 @@
 ---
-stack: "HTML5 - CSS3 - JavaScript - React JS - Python - PHP - SQL - Flask  - Django - Webpack - Styled Components - Bootstrap - Gatsby - Git - Heroku - WordPress - Adobe Suite"
+stack: "HTML5 - CSS3 - JavaScript - React JS - Python - PHP - SQL - Node - Express - Flask  - Django - Webpack - Styled Components - Bootstrap - Gatsby - Git - Heroku - WordPress - Adobe Suite"
 ---
 
 I'm a full-stack web developer who **_loves_** building things, learning new technologies, and <span>pushing my creative limits</span>.
