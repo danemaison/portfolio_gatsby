@@ -5,6 +5,6 @@ source: https://google.com
 live: https://google.com
 stack: jQuery | CSS3
 type: all frontend other
-description: A card matching game with a theme inspired by legendary NBA players
+description: A card matching game with a theme inspired by legendary NBA players.
 order: 2
 ---
