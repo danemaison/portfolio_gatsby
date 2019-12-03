@@ -15,7 +15,9 @@ const Container = styled.div`
   height: 30vh;
 `
 
-const Email = styled.div`
+const Email = styled.a`
+  color: black;
+  text-decoration: none;
   font-weight: 700;
 `
 
@@ -66,7 +68,7 @@ const Contact = () => {
     <Container id="contact">
       <SectionTitle>Contact Me</SectionTitle>
       Want to talk? Send me an email at
-      <Email>danemaison@gmail.com</Email>
+      <Email href="mailto:danemaison@gmail.com">danemaison@gmail.com</Email>
       <ButtonContainer>
         <LinkWrapper>
           <Anchor
