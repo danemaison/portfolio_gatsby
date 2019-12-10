@@ -3,6 +3,15 @@ import styled from "styled-components"
 import { SectionTitle } from "../components/ui/elements"
 import { useStaticQuery, graphql } from "gatsby"
 import rehypeReact from "rehype-react"
+import Img from "gatsby-image"
+import { Social } from "./contact"
+
+const Image = styled(Img)`
+  width: 300px;
+  height: 300px;
+  margin: 25px 0;
+  box-shadow: 0 0px 6px rgba(0, 0, 0, 0.5);
+`
 
 const Container = styled.div`
   display: flex;
@@ -17,7 +26,7 @@ const Container = styled.div`
 `
 
 const Body = styled.div`
-  text-align: left;
+  text-align: center;
 `
 const Title = styled(SectionTitle)`
   position: relative;
@@ -66,18 +75,26 @@ const About = () => {
         childMarkdownRemark {
           frontmatter {
             stack
+            image {
+              childImageSharp {
+                fluid(maxWidth: 800, quality: 80) {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+            }
           }
           htmlAst
         }
       }
     }
   `)
-  const { stack } = about.childMarkdownRemark.frontmatter
+  const { stack, image } = about.childMarkdownRemark.frontmatter
   const { htmlAst } = about.childMarkdownRemark
 
   return (
     <Container id="about-me">
       <Title>About Me</Title>
+      <Image fluid={image.childImageSharp.fluid} />
       <Body>{renderCustom(htmlAst)}</Body>
       <StackHeader>Some tools I've used</StackHeader>
       <StackBody>{stack}</StackBody>

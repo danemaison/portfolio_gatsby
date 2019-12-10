@@ -63,47 +63,53 @@ const Icon = styled(FontAwesomeIcon)`
   font-size: 1rem;
 `
 
+export const Social = () => {
+  return (
+    <ButtonContainer>
+      <LinkWrapper>
+        <Anchor
+          rel="noreferrer"
+          target="_blank"
+          aria-label="Github"
+          href="https://github.com/danemaison"
+        >
+          <Icon icon={faGithub} />
+        </Anchor>
+        Github
+      </LinkWrapper>
+      <LinkWrapper>
+        <Anchor
+          rel="noreferrer"
+          target="_blank"
+          aria-label="LinkedIn"
+          href="https://www.linkedin.com/in/dane-maison/"
+        >
+          <Icon icon={faLinkedinIn} />
+        </Anchor>
+        LinkedIn
+      </LinkWrapper>
+      <LinkWrapper>
+        <Anchor
+          rel="noreferrer"
+          target="_blank"
+          aria-label="Resume"
+          href="https://www.dropbox.com/s/9nkrxavtnvocx3o/Dane%20Maison%20-%20Resume.pdf?dl=0"
+        >
+          <Icon icon={faFile} />
+        </Anchor>
+        Resume
+      </LinkWrapper>
+    </ButtonContainer>
+  )
+}
+
 const Contact = () => {
   return (
     <Container id="contact">
       <SectionTitle>Contact Me</SectionTitle>
       Want to talk? Send me an email at
       <Email href="mailto:danemaison@gmail.com">danemaison@gmail.com</Email>
-      <ButtonContainer>
-        <LinkWrapper>
-          <Anchor
-            rel="noreferrer"
-            target="_blank"
-            aria-label="Github"
-            href="https://github.com/danemaison"
-          >
-            <Icon icon={faGithub} />
-          </Anchor>
-          Github
-        </LinkWrapper>
-        <LinkWrapper>
-          <Anchor
-            rel="noreferrer"
-            target="_blank"
-            aria-label="LinkedIn"
-            href="https://www.linkedin.com/in/dane-maison/"
-          >
-            <Icon icon={faLinkedinIn} />
-          </Anchor>
-          LinkedIn
-        </LinkWrapper>
-        <LinkWrapper>
-          <Anchor
-            rel="noreferrer"
-            target="_blank"
-            aria-label="Resume"
-            href="https://www.dropbox.com/s/9nkrxavtnvocx3o/Dane%20Maison%20-%20Resume.pdf?dl=0"
-          >
-            <Icon icon={faFile} />
-          </Anchor>
-          Resume
-        </LinkWrapper>
-      </ButtonContainer>
+      <Social />
     </Container>
   )
 }
