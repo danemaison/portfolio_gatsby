@@ -63,7 +63,7 @@ const Icon = styled(FontAwesomeIcon)`
   font-size: 1rem;
 `
 
-export const Social = () => {
+const Social = () => {
   return (
     <ButtonContainer>
       <LinkWrapper>

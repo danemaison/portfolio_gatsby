@@ -4,7 +4,6 @@ import { SectionTitle } from "../components/ui/elements"
 import { useStaticQuery, graphql } from "gatsby"
 import rehypeReact from "rehype-react"
 import Img from "gatsby-image"
-import { Social } from "./contact"
 
 const Image = styled(Img)`
   width: 300px;
