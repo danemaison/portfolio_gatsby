@@ -93,7 +93,7 @@ const Social = () => {
           rel="noreferrer"
           target="_blank"
           aria-label="Resume"
-          href="https://www.dropbox.com/s/9nkrxavtnvocx3o/Dane%20Maison%20-%20Resume.pdf?dl=0"
+          href="https://drive.google.com/open?id=0B7gFcivnL-BoeFdsaWo0cVRKZ0NGU0t5bC16djlWS0llbW1v"
         >
           <Icon icon={faFile} />
         </Anchor>
