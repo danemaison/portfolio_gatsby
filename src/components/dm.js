@@ -13,6 +13,7 @@ const Container = styled.div`
   }
 `
 const SVG = styled(Dm)`
+  pointer-events: none;
   width: 160vw;
   height: 100%;
   @media ${({ theme }) => theme.mediaQueries.small} {

@@ -15,9 +15,6 @@ const Container = styled.div`
   height: calc(85vh - 100px);
   height: calc(var(--vh, 1vh) * 97 - 60px);
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    font-size: 130%;
-  }
-  @media ${({ theme }) => theme.mediaQueries.large} {
     font-size: 150%;
     min-height: calc(100vh - 100px);
     text-align: left;
