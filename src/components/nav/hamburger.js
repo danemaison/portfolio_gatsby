@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 const Burger = styled.button`
-  margin-right: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

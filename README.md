@@ -17,4 +17,4 @@ Check it out at https://danemaison.com
 
 # Preview
 
-![Portfolio](src/content/portfolio/9_portfolio/portfolio.png)
+![Portfolio](src/content/portfolio/8_portfolio/portfolio.png)

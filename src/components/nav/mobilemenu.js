@@ -14,6 +14,7 @@ const Menu = styled.nav`
   left: ${({ open }) => (open ? 0 : "-100%")};
   width: 100%;
   height: calc(100vh - 50px);
+  height: calc(var(--vh, 1vh) * 100 - 50px);
   background-color: white;
   opacity: ${({ open }) => (open ? 1 : 0)};
   transition: 0.5s;
