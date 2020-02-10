@@ -4,9 +4,11 @@ import Dm from "../images/dm.svg"
 
 const Container = styled.div`
   position: fixed;
+  z-index: -1;
   right: -25%;
   top: 45%;
   opacity: 0.05;
+
   transform: translate(0, -50%);
   @media ${({ theme }) => theme.mediaQueries.small} {
     right: 0;
