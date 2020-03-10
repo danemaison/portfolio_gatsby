@@ -107,7 +107,7 @@ const Contact = () => {
   return (
     <Container id="contact">
       <SectionTitle>Contact Me</SectionTitle>
-      Want to talk? Send me an email at
+      Let's talk! Send me an email at
       <Email href="mailto:danemaison@gmail.com">danemaison@gmail.com</Email>
       <Social />
     </Container>

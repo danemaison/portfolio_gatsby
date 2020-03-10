@@ -57,7 +57,7 @@ const ButtonContainer = styled.div`
 
 const Projects = styled.div`
   display: block;
-  min-height: 45vh;
+  min-height: 50vh;
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;

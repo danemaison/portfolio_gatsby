@@ -3,7 +3,7 @@ stack: "HTML5 - CSS3 - JavaScript - React JS - Python - PHP - SQL - Node - Expre
 image: profile.png
 ---
 
-I'm a full-stack web developer who **_loves_** building things, learning new technologies, and <span>pushing my creative limits</span>.
+I'm a full-stack software developer who **_loves_** building things, learning new technologies, and <span>pushing my creative limits.</span>
 
 For the past two years, I have had the opportunity to utilize my love for programming by working as a <span>freelance web developer</span>. I built websites for clients using **HTML**, **CSS**, **JavaScript**, **WordPress**, and **PHP**. I also analyzed user site traffic and patterns with **Google Analytics** and learned the basics of **SEO**.
 

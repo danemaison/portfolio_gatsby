@@ -25,7 +25,7 @@ const Footer = () => {
   return (
     <Container>
       <Header>Dane Maison</Header>
-      <Subheader>Web Developer</Subheader>
+      <Subheader>Software Engineer</Subheader>
     </Container>
   )
 }
