@@ -20,13 +20,13 @@ const StyledLink = styled(Link)`
 
 const AnimatedLink = animated(StyledLink)
 
-const NavItem = ({ section, mobile, open, setOpen }) => {
+const NavItem = ({ section, mobile, toggleMenu }) => {
   const location = section.toLowerCase().replace(" ", "-")
   const style = useSpring({ opacity: 1, from: { opacity: 0 } })
   return (
     <AnimatedLink
       mobile={mobile}
-      onClick={mobile ? () => setOpen(!open) : () => {}}
+      onClick={mobile ? () => toggleMenu() : () => {}}
       style={style}
       to={location}
       spy={true}

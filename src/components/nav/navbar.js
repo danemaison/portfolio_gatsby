@@ -23,14 +23,23 @@ const Nav = styled.nav`
 
 const NavBar = props => {
   const [open, setOpen] = useState(false)
+  const toggleMenu = () => {
+    console.log("hello")
+    setOpen(!open)
+    if (document.body.style.overflowY === "hidden") {
+      document.body.style.overflowY = "scroll"
+    } else {
+      document.body.style.overflowY = "hidden"
+    }
+  }
   return (
     <>
       <Nav>
         <Brand />
         <DesktopMenu />
       </Nav>
-      <Hamburger open={open} setOpen={setOpen} />
-      <MobileMenu open={open} setOpen={setOpen} />
+      <Hamburger open={open} toggleMenu={toggleMenu} />
+      <MobileMenu open={open} toggleMenu={toggleMenu} />
     </>
   )
 }

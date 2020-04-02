@@ -11,7 +11,7 @@ const Menu = styled.nav`
   align-items: center;
   z-index: 5;
   top: 50px;
-  left: ${({ open }) => (open ? 0 : "-100%")};
+  transform: ${({ open }) => (open ? "translate(0)" : "translate(-100%)")};
   width: 100%;
   height: calc(100vh - 50px);
   height: calc(var(--vh, 1vh) * 100 - 50px);
@@ -23,13 +23,12 @@ const Menu = styled.nav`
 const AnimatedMenu = animated(Menu)
 const sections = ["About Me", "Projects", "Contact"]
 
-const MobileMenu = ({ open, setOpen }) => {
+const MobileMenu = ({ open, toggleMenu }) => {
   return (
-    <AnimatedMenu open={open} onClick={() => setOpen(!open)}>
+    <AnimatedMenu open={open} onClick={() => toggleMenu()}>
       {sections.map(section => (
         <NavItem
-          setOpen={setOpen}
-          open={open}
+          toggleMenu={toggleMenu}
           mobile
           key={section}
           section={section}
