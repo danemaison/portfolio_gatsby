@@ -22,14 +22,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          {
-            family: `Montserrat`,
-            variants: ["200", "300", "400", "700", "800", "900"],
-          },
-        ],
+        fonts: [`Montserrat`],
       },
     },
     `gatsby-transformer-remark`,
